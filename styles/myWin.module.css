@@ -1,0 +1,285 @@
+.appMyResults{
+    margin-top:100px;
+}
+
+.freebets{
+    color: green;
+    background: #d9ffd9;
+    display: inline-block;
+    padding: 8px 14px;
+    margin-top: 0px;
+    border-radius:5px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.titleRank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom:20px;
+}
+
+.titleRank span {
+    opacity: .2;
+    margin-right: 8px;
+}
+
+.chooseWeek {
+    align-items: center;
+    color: #000;
+    width: 30%;
+    justify-content: space-between;
+    background: #fff;
+    padding: 7px 0;
+    font-size: 14px;
+    width: fit-content !important;
+    margin: 0 auto;
+    display:flex;
+}
+
+.navWeek {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    display: block;
+    width: 30px;
+    text-align: center;
+    color:#000;
+    margin:0 50px;
+    cursor:pointer;
+}
+
+.navWeek span{
+    font-size: 18px;
+}
+
+.weekSelected {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 12px !important;
+    font-weight: 400;
+    text-align: center;
+    display:flex !important;
+}
+
+.weekSelected strong {
+    font-weight: 700;
+    font-size: 14px !important;
+    margin-bottom: 3px;
+}
+
+.nothing{
+    color: #000;
+    width:100%;
+    display:block;
+    text-align:center;
+    font-size: 12px;
+    margin-top:10px;
+}
+
+.chiffresRef{
+    background:red;
+    position:relative;
+    overflow:hidden;
+}
+
+.chiffresRef::before{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:50%;
+    width:700px;
+    height:700px;
+    background:#FFF;
+    z-index:1;
+    opacity:0.1;
+    transform:translate(-50%, 30%);
+    border-radius:50%;
+}
+
+.chiffresRef::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:50%;
+    width:700px;
+    height:700px;
+    background:#FFF;
+    z-index:1;
+    opacity:0.1;
+    transform:translate(-50%, 30%) scale(1.1);
+    border-radius:50%;
+}
+
+.allRef{
+    z-index:2;
+    position:relative;
+}
+
+.infoRef{
+    text-align:center;
+    border-right:1px solid rgba(255,255,255,.3)
+}
+
+.infoRef:last-child{
+    border-right:0px;
+}
+
+.typeRef{
+    display:block;
+    font-size:12px;
+    opacity:1;
+    color:#FFF;
+    font-weight:400;
+}
+
+.infoRef span:first-child{
+    font-size:20px;
+    margin-bottom:0px;
+    opacity:1;
+    color:#FFF;
+}
+
+.numberRef{
+    font-size:24px;
+    font-weight:700;
+    margin-top:5px;
+    display:block;
+    color:#FFF;
+}
+
+.ctaRef{
+    text-decoration:none;
+    color:red;
+    background:white;
+    font-size:12px;
+    text-transform: uppercase;
+    font-weight:700;
+    padding:13px 24px;;
+    border-radius:10px;
+    display:inline-block;
+    transition:.2s ease;
+}
+
+.ctaRef:hover{
+    transform:translateY(-4px)
+}
+
+.titleRef{
+    font-size:11px;
+    text-transform:uppercase;
+    color:red;
+    background:white;
+    display:inline-block;
+    font-weight:700;
+    padding:5px 12px;
+    border-radius:35px;
+}
+
+.congrats{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background:rgba(0,0,0,0.8);
+    z-index:9999
+}
+
+.contenter{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background:#FFF;
+    width:25%;
+    padding:20px;
+    box-sizing: border-box;
+    border-radius:10px;
+    animation:appear .8s forwards;
+}
+
+@keyframes appear{
+    0%{transform:translate(-50%, -50%) scale(0.6)}
+    100%{transform:translate(-50%, -50%) scale(1)}
+}
+
+.youWin{
+    font-weight:700;
+    margin-bottom:20px;
+    display:block
+}
+
+.close{
+    font-size:12px;
+    background:red;
+    color:#FFF;
+    font-weight:700;
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:10px;
+    text-transform: uppercase;
+    cursor:pointer;
+}
+
+.winIcon{
+    color:red;
+    font-size:30px;
+}
+
+@media(max-width:810px){
+    .appResults{
+        margin-top:80px;
+    }
+
+    .chiffresRef{
+        border-radius:18px;
+        padding:25px 0 !important;
+    }
+
+    .infoRef:nth-child(2n){
+        border-right:0px;
+    }
+
+    .infoRef:nth-child(1){
+        padding-bottom:20px;
+        border-right:1px solid rgba(255,255,255,0.2);
+        border-bottom:1px solid rgba(255,255,255,0.2)
+    }
+
+    .infoRef:nth-child(2){
+        padding-bottom:20px;
+        border-bottom:1px solid rgba(255,255,255,0.2)
+    }
+
+    .infoRef:nth-child(3), .infoRef:last-child{
+        padding-top:20px;
+    }
+
+    .infoRef:nth-child(3){
+        border-right:1px solid rgba(255,255,255,0.2)
+    }
+}
+
+@media(max-width:810px){
+    .appMyResults{
+        margin-top:80px;
+    }
+
+    .navWeek{
+        margin:0 30px;
+    }
+
+    .weekSelected{
+        font-size:11px !important;
+    }
+
+    .contenter{
+        width:90%;
+    }
+}

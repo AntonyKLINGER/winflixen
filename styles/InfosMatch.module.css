@@ -1,0 +1,153 @@
+.appInfos{
+    margin-top:100px;
+}
+
+.breadcrump{
+    color:#a4a4aa;
+    font-size:12px;
+}
+
+.breadcrump a{
+    text-decoration:none;
+    color:#a4a4aa;
+}
+
+.pronoMatch, .resultatProno{
+    font-size:13px;
+}
+
+.resultatProno{
+    font-weight:400;
+}
+
+.oddsBox {
+    font-size: 12px;
+    width: 54px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #28ae15;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-left: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.appFreebetsBet {
+    align-items: center;
+    font-size: 12px;
+    background: #eaffea;
+    padding: 7px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    box-sizing: border-box;
+    display: inline-flex;
+    color: green;
+}
+
+.appFreebetsBetl {
+    align-items: center;
+    font-size: 12px;
+    background: #fff7e8;
+    padding: 7px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    box-sizing: border-box;
+    display: inline-flex;
+    color: orange;
+}
+
+.appFreebetsBet span{
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.appFreebetsBetl span{
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.appBetTitle{
+    justify-content: center;
+    font-size: 14px;
+    padding: 10px 0;
+    display: flex;
+    background: #f9f9f9;
+}
+
+.appBetTitle span {
+    font-size: 16px;
+    margin-right: 7px;
+    opacity: .2;
+}
+
+.boxCote {
+    padding: 6px 7px 6px 12px;
+    width: 33%;
+    box-sizing: border-box;
+    margin: 10px 10px 0 0;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    background: #f9f9f9;
+    position: relative;
+    transition:.1s ease;
+    cursor:pointer;
+}
+
+.boxCote:hover{
+    background: #f2f2f2;
+}
+
+.coteP{
+    color: #000;
+    font-size: 12px;
+}
+
+.coteC {
+    color: #000;
+    background: rgba(223, 223, 223, .6);
+    width: 40px;
+    font-size: 11px;
+    height: 25px;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-weight: 700;
+}
+
+@media(max-width:810px){
+    .appMetasScore span{
+        height:30px !important;
+    }
+
+    .pronoMatch{
+        font-size:12px !important;
+    }
+
+    .cOdds{
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        padding: 3px 0 8px 0;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .breadcrump{
+        padding: 0 25px;
+    }
+    
+}

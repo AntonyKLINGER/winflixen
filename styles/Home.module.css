@@ -1,0 +1,573 @@
+.appHome{
+    margin-top:100px;
+}
+
+.appNewHome{
+    margin-top:100px;
+}
+
+.appHome h1{
+    font-size: 1.5em !important;
+    color: #000 !important;
+    font-weight: 700;
+    line-height:1.5em;
+    margin-top:0px;
+}
+
+.h2p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #a4a4aa;
+    line-height:1.5em;
+}
+
+.flagCountry{
+    width:20px;
+    height:20px;
+    position:relative;
+    margin-right:7px;
+}
+
+.pronoLink {
+    text-decoration: none;
+    color: #000;
+    padding: 15px;
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, .05);
+    width: 49%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.titleCountry {
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.iconmd{
+    font-size:18px;
+    color:red;
+}
+
+.buttonInline button{
+    margin-right:7px;
+}
+
+.graphTitle{
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    margin-top:20px;
+    padding:10px 24px;
+    border-radius:5px;
+    box-sizing:border-box;
+    text-align:left;
+    font-size:12px;
+    color:green;
+    background:#ceffce;
+}
+
+.graphTitle span{
+    font-size:14px;
+    margin-right:5px;
+}
+
+.green{
+    color:green;
+}
+
+.boxToggle {
+    border: 1px solid rgba(0, 0, 0, .07);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 18px;
+}
+
+.quickPicto{
+    width:25px;
+    height:25px;
+    position:relative;
+    margin-right:7px;
+}
+
+.quickPicto img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.outilTitle{
+    font-weight:700;
+    text-decoration:none;
+    color:#000;
+}
+
+.boxLink{
+    border: 1px solid rgba(255, 0, 0, .07);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000;
+    transition: .1s;
+    margin-bottom:20px;
+}
+
+.boxLink:nth-child(7){
+    margin-bottom:0px;
+}
+
+.boxLink:last-child{
+    margin-bottom:0px;
+}
+
+.boxLink:hover{
+    background: #fff9f9;
+}
+
+.boxLink p{
+    font-size:12px;
+}
+
+.starsReviews{
+    width:70px;
+    height:12px;
+    position:relative;
+}
+
+.starsReviews img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.flagProno{
+    width:30px;
+    height:25px;
+    position:relative;
+    transform:translateY(1px)
+}
+
+.flagProno img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.toggleCountry{
+    margin-bottom:20px;
+    cursor:pointer;
+}
+
+.toggleCountry:last-child{
+    margin-bottom:0px;
+}
+
+.faqToggle{
+    border-bottom:1px solid rgba(0,0,0,0.07);
+    padding-bottom:10px;
+    margin-bottom:10px;
+}
+
+.faqToggle:last-child{
+    border-bottom:0px;
+}
+
+.faqToggle a{
+    color:#000;
+}
+
+.faqToggle ul{
+    margin:0;
+    padding:0;
+    font-size:14px;
+    color:#a4a4aa;
+}
+
+.faqToggle ul li{
+    list-style-position: inside !important;
+    list-style:circle;
+    line-height:1.5em;
+}
+
+.faqTitle{
+    font-size:14px;
+    cursor:pointer;
+}
+
+.miniBox{
+    width:15px;
+    max-height:15px;
+    position:relative;
+}
+
+.miniBox span{
+    position:relative !important;
+}
+
+.miniBox img{
+    position:relative !important;
+    width: 15px !important;
+    height: auto !important;
+    max-height:15px !important;
+}
+
+.miniBoxCountry{
+    width:17px;
+    max-height:25px;
+    position:relative;
+    margin-left: -3px;
+    z-index: 1;
+    overflow: hidden;
+    clip-path: circle(7px);
+}
+
+.miniBoxCountry span{
+    position:relative !important;
+}
+
+.miniBoxCountry img{
+    position: relative !important;
+    width: 18px !important;
+    height: auto !important;
+    max-height: 25px !important;
+    transform: scale(1.2);
+}
+
+.countryBox{
+    width:10%;
+}
+
+.leagueBox{
+    font-size:12px;
+    color:#000;
+    display:block;
+    width:80%;
+    padding-left:5px;
+    opacity:0.8
+}
+
+.hourBox{
+    width:10%;
+    font-size:12px;
+    opacity:0.4;
+}
+
+.pronoBox{
+    background:#FFF;
+    box-shadow:1px 1px 25px rgba(0,0,0,0.07);
+    padding:20px;
+    box-sizing: border-box;
+    border-radius:15px;
+    position:relative;
+    cursor:pointer;
+}
+
+.linkBox{
+    text-decoration:none;
+    color:#000;
+    cursor:pointer;
+}
+
+.scoreBox{
+    background:#F2F2F2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:25px;
+    height:25px;
+    border-radius:5px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.nameBox{
+    font-size:14px;
+    font-weight:600;
+    margin-left:5px;
+}
+
+.goBox{
+    position:absolute;
+    bottom:15px;
+    right:15px;
+}
+
+.goLink{
+    color:red;
+    text-decoration:none;
+}
+
+.goBox svg{
+    width:0.9em;
+    height:0.9em;
+}
+
+.seeAll{
+    text-decoration:none;
+    color:#000;
+    background:#FFF;
+    font-size:14px;
+    font-weight:600;
+    padding:7px 15px;
+    border-radius: 5px;
+    box-shadow:1px 1px 25px rgba(0,0,0,0.03);
+}
+
+.wintipsImg{
+    width:100%;
+    max-height:120px;
+    position:relative;
+}
+
+.wintipsImg span{
+    position:relative !important;
+    height:120px !important;
+}
+
+.wintipsImg img{
+    /* position:relative !important; */
+    width: 100% !important;
+    height: 100% !important;
+    max-height:100% !important;
+    object-fit:cover;
+}
+
+.wintipsBox{
+    background:#FFF;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.wintipsMetas{
+    padding:20px;
+    box-sizing:border-box;
+}
+
+.wintipsNumber{
+    font-size: 12px;
+    background: #F2F2F2;
+    padding: 5px;
+    border-radius: 5px;
+    color: #898989;
+}
+
+.wintipsDate{
+    display:inline-flex;
+    align-items:center;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+.wintipsDate span{
+    font-size:12px;
+    margin-right:5px;
+}
+
+.wintipsGains{
+    display:block;
+    margin:15px 0 8px;
+    font-size:12px;
+    color:#888;
+}
+
+.wintipsGains span{
+    color:green;
+    display:inline-block;
+    padding:3px 5px;
+    border-radius:5px;
+    font-weight:600;
+    margin-right:5px;
+    background:#d5ffd5;
+}
+
+.wintipsTitle{
+    display:block;
+    font-weight:700;
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+.toolBox{
+    background:#FFF;
+    padding:25px;
+    box-sizing:border-box;
+    position:relative;
+    border-radius:10px;
+    text-decoration:none;
+    color:#000;
+}
+
+.toolBox a{
+    text-decoration:none;
+    color:#000;
+}
+
+.toolName{
+    display:flex;
+    align-items:center;
+    font-weight:700;
+}
+
+.toolName span{
+    font-size:18px;
+    color:red;
+    margin-right:7px;
+}
+
+.toolDesc{
+    font-size:12px;
+    opacity:0.5;
+    margin:10px 0 0;
+    display:block;
+    line-height:1.5em;
+}
+
+.goBoxSmall{
+    position:absolute;
+    bottom:10px;
+    right:10px;
+}
+
+.goBoxSmall svg{
+    width:0.9em;
+    height:0.9em;
+}
+
+.appNewHome h1{
+    font-size:14px;
+    line-height:1.5em;
+    color:#A4A4AA;
+    font-weight:400;
+    display:inline-block;
+}
+
+.minih2{
+    font-size:14px;
+    display:inline-block;
+    color:#A4A4AA;
+    font-weight:400;
+}
+
+
+@media(max-width:810px){
+    .buttonInline button{
+        margin-bottom:8px !important;
+    }
+
+    .appNewHome{
+        margin-top:80px;
+    }
+
+    .overh{
+        width: 100%;
+        overflow:hidden;
+    }
+
+    .scrollSection{
+        flex-wrap: unset;
+        width: 100%;
+        overflow-x: scroll;
+        scroll-snap-type: x proximity;
+        display: flex;
+        scrollbar-width: none;
+        height: 150px;
+        align-items: center;
+    }
+
+    .scrollSection::-webkit-scrollbar{
+        display:none;
+    }
+
+    .vuematch{
+        width: 250px !important;
+        scroll-snap-align: center;
+        display:block;
+        margin-right:20px;
+    }
+
+    .vuematch2{
+        width: 100%;
+        margin-top:20px;
+    }
+
+    .pronoBox{
+        width:250px;
+    }
+
+    .graphic{
+        order:2;
+    }
+
+    .ajpadd{
+        padding:0 20px;
+        box-sizing: border-box;
+        order:1;
+    }
+
+    .ajpadd > div > span{
+        font-size: 18px !important;
+    }
+
+    .seeAll{
+        font-size:12px;
+    }
+
+    .toolName{
+        font-size:13px;
+    }
+
+    .toolName span{
+        font-size:14px;
+        margin-right:5px;
+    }
+
+    .toolDesc{
+        font-size:11px;
+    }
+
+    .toolBox{
+        padding:15px;
+        padding-bottom:35px;
+    }
+
+    .leagueBox{
+        font-size:10px;
+    }
+
+    .hourBox{
+        font-size:10px;
+    }
+
+    .nameBox{
+        font-size:12px;
+    }
+
+    .scoreBox{
+        width:20px;
+        height:20px;
+        font-size:10px;
+    }
+    
+    .goBox svg{
+        width:0.7em;
+        height:0.7em;
+    }
+
+    .buttonInline{
+        display:flex;
+        overflow-x:scroll;
+        scrollbar-width: none;
+        height:65px;
+        align-items:center;
+    }
+
+    .buttonInline::-webkit-scrollbar{
+        display:none;
+    }
+
+    .tomax{
+        width:100% !important;
+    }
+}

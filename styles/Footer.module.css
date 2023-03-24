@@ -1,0 +1,92 @@
+.appFooter {
+    background: #1d1d25;
+    margin-top: 30px;
+    padding: 60px 0;
+}
+
+.titleFooter{
+    color:#FFF;
+    font-weight:700;
+    font-size:18px;
+    margin:unset;
+    display:block;
+}
+
+.congrats{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background:rgba(0,0,0,0.8);
+    z-index:9999;
+}
+
+.appFooter p{
+    color:#A4A4AA;
+    font-size:12px;
+    font-weight:400;
+    line-height:1.5em;
+}
+
+.menuFooter{
+    list-style:none;
+    padding:0;
+    margin-left:0px;
+}
+
+.menuFooter li a {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #a4a4aa;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.flagCountry{
+    width:20px;
+    height:20px;
+    position:relative;
+    margin-right:7px;
+}
+
+.copy{
+    color: #a4a4aa;
+    font-size: 14px;  
+    margin-top:20px;
+    display:block;  
+}
+
+.appFooter2 {
+    margin-top: 60px;
+    padding-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    padding-bottom: 60px;
+}
+
+.reviewStars{
+    width:75px;
+    height:13px;
+    position:relative;
+    margin:0 auto 10px;
+}
+
+.reviewLink{
+    text-decoration:none;
+    color:#A4A4AA;
+    font-size:14px;
+    display:inline-block;
+}
+
+@media(max-width:810px){
+    .titleFooter{
+        text-align:center;
+    }
+
+    .menuFooter li a{
+        text-align:center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,60 @@
+.appLogin{
+    margin-top:100px;
+}
+
+.appLogin h1{
+    font-size:1.5rem;
+    color:#000;
+    font-weight:700;
+    line-height:1.5em;
+    margin:0px
+}
+
+.appLogin form{
+    margin-top:10px;
+}
+
+.appLogin .AppLog{
+    margin-top:10px;
+}
+
+.textField{
+    width:50%;
+}
+
+.textField:first-child{
+    margin-right:10px;
+}
+
+.textField input, .textField label{
+    font-size:14px;
+}
+
+.remember span{
+    font-size:14px;
+}
+
+.remember{
+    margin-left:0px !important;
+    margin-top:10px !important;
+    margin-bottom:10px;
+}
+
+.AppLogin button{
+    width:15ch;
+    margin-left:0px !important;
+}
+
+.forgetPass{
+    display:block;
+    font-size:14px;
+    margin-top:20px;
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+@media(max-width:810px){
+    .appLogin{
+        margin-top:80px;
+    }
+}

@@ -1,0 +1,663 @@
+.appTools{
+    margin-top:100px;
+}
+
+.outilImg{
+    width:100%;
+    height:100%;
+    position:relative;
+    text-align: center;
+    display: inline-block;
+}
+
+.outilImg span{
+    position:relative !important;
+}
+
+.outilImg img{
+    position:relative !important;
+    width:50px !important;
+    height:auto !important;
+    border-radius:18px;
+}
+
+.outil{
+    border: 1px solid rgba(0, 0, 0, .07);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.titleOutil{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(140, 140, 140, .07);
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+}
+
+.titleOutil span{
+    font-size: 16px;
+    margin-right: 5px;
+    color: red;
+}
+
+.descOutil{
+    display: block;
+    font-size: 14px;
+    margin: 5px 0 10px;
+    line-height: 1.5em;
+    color: #888;
+}
+
+.sep{
+    width:100%;
+    height:1px;
+    background:rgba(0,0,0,0.07);
+    margin:15px 0;
+}
+
+.toptag{
+    display:inline-block;
+    color:red;
+    background:#ffeaea;
+    padding:0px 15px;
+    border-radius:10px;
+}
+
+.textField > div > label{
+    font-size:14px;
+}
+
+.textField input{
+    font-size:14px;
+}
+
+.textFieldT > div > label{
+    font-size:14px;
+}
+
+.textFieldT input{
+    font-size:14px;
+}
+
+.textFieldT > div > div{
+    height:40px;
+}
+
+.loading{
+    font-size:12px;
+    color:red;
+    display:block;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.matchBox fieldset{
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius:10px;
+    padding:0px 0px 15px 15px;
+    box-sizing: border-box;
+    margin-bottom:20px;
+}
+
+.matchBox legend{
+    font-weight:700;
+    font-size:12px;
+    padding:0 15px;
+    display:flex;
+    align-items:center;
+}
+
+.matchBox legend a{
+    text-decoration:none;
+    color:red;
+    display:flex;
+}
+
+.matchBox legend a span{
+    font-size:14px;
+    margin-left:10px;
+}
+
+.matchOpt{
+    display: block;
+    font-size: 12px;
+}
+
+.lineProgress{
+    width:100%;
+    height:8px;
+    background:#ffeeee;
+    position:relative;
+    border-radius:3px;
+}
+
+.lineValue{
+    background:red;
+    position:absolute;
+    left:0;
+    top:0;
+    display:block;
+    height:100%;
+    border-radius:3px;
+    transition:.4s ease;
+}
+
+.linePercent{
+    font-size:11px;
+    font-weight:700;
+    margin-left:10px;
+}
+
+.oddOption{
+    font-size: 11px;
+    font-weight: 700;
+    background: #f7f7f7;
+    width: 45px;
+    display: inline-flex;
+    justify-content: center;
+    height: 25px;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.matchOption{
+    border:1px solid rgba(0,0,0,0.07);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    cursor:pointer;
+    margin-right:8px;
+}
+
+.matchOption:nth-child(3n){
+    margin-right:0px;
+}
+
+.filters svg{
+    margin-left:10px !important;
+}
+
+.example{
+    width:100%;
+    position:relative;
+    margin-top:20px;
+    pointer-events:none;
+}
+
+.example span{
+    position:relative !important;
+}
+
+.example img{
+    position:relative !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius:15px;
+}
+
+.flagTeamLive{
+    width:20px;
+    height:100%;
+    position:relative;
+}
+  
+.flagTeamLive span{
+    position:relative !important;
+}
+
+.flagTeamLive img{
+    position:relative !important;
+    width: 20px !important;
+    height: auto !important;
+}
+
+.teamName{
+    margin-left:5px;
+    font-size:13px;
+    font-weight:700;
+    min-width:140px;
+    max-width:140px;
+}
+
+.probabox{
+    font-size:12px;
+    display:inline-flex;
+    align-items: center;
+    flex-direction:column;
+    font-weight:700;
+    padding:10px;
+    border-radius:5px;
+    margin-right:20px;
+}
+
+.probabox span{
+    font-size:18px;
+    margin-right:5px;
+}
+
+.oddBox{
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    width:75px;
+}
+
+.oddBox:first-child{
+    margin-right:10px;
+}
+
+.typeOdd{
+    width: 25px;
+    background: #ececec;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 600;
+    
+}
+
+.valueOdd{
+    background: #f9f9f9;
+    color: black;
+    font-size: 10px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    width:45px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.topscore{
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow:1px 1px 20px rgba(0,0,0,0.15);
+    margin-right:14px;
+    margin-bottom:10px;
+    max-width:59px;
+}
+
+.topNumber{
+    width: 25px;
+    background: #FFF;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.topScore{
+    background: red;
+    color: #FFF;
+    font-size: 10px;
+    padding: 5px 8px;
+    box-sizing: border-box;
+}
+
+.fieldset legend{
+    font-size:10px;
+    display:block;
+    margin-bottom:10px;
+    color:rgba(255,0,0,1);
+    font-weight:700;
+    padding:0 10px;
+}
+
+.fieldset{
+    border:1px solid rgba(255,0,0,0.15);
+    border-radius:5px;
+    padding-right:0px;
+}
+
+.boxDiff{
+    background:#F9F9F9;
+    text-align:center;
+    border-radius:5px;
+    padding:10px;
+    box-sizing:border-box;
+}
+
+.diffbut{
+    font-size:12px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    font-weight:600;
+}
+
+.diffbut span{
+    font-size:14px;
+    margin-right:5px;
+}
+
+.titleDiff{
+    display:block;
+    font-size:10px;
+    margin-bottom:5px;
+    font-weight:700;
+    opacity:0.3;
+}
+
+
+.winscoreBox{
+    background: #FFF;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.winscoreBox:last-child{
+    margin-bottom:0px !important;
+    border:0px !important;
+    padding-bottom:0px !important;
+}
+
+.sorry{
+    display:block;
+    width:100%;
+    font-size:12px;
+    text-align:center;
+}
+
+.butMoy{
+    margin-bottom:0px !important;
+}
+
+.butMoy .topScore{
+    background:#d20000;
+}
+
+.butMoy .topNumber{
+    color:#d20000;
+}
+
+.diffbutBox{
+    margin-right:5px;
+}
+
+.topScore{
+    width:40px;
+    text-align:center;
+}
+
+.diffbutColor{
+    font-size:10px;
+    font-weight:700;
+    background:#F9F9F9;
+    width:50px;
+    height:55px;
+    border-radius:5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-left:5px;
+}
+
+.gapper{
+    gap:10px;
+}
+
+.quickName{
+    font-size:12px;
+}
+
+.boxGreen{
+    color:green;
+    background:#dfd;
+}
+
+.boxBlue{
+    color: #2082ff;
+    background: #ddecff;
+}
+
+.boxOrange{
+    color:orange;
+    background:#fff3de;
+}
+
+.goStats{
+    margin-top:10px;
+    text-decoration:none;
+    font-size:10px;
+    display:inline-flex;
+    align-items:center;
+    background:red;
+    color:#FFF;
+    padding:7px 8px;
+    box-sizing: border-box;
+    border-radius:5px;
+    font-weight:600
+}
+
+.goStats  span{
+    font-size:11px;
+    margin-right:5px;
+}
+
+.explains{
+    padding:0 0 20px;
+    border-bottom:1px solid rgba(0,0,0,0.07);
+    margin-bottom:20px;
+}
+
+.legend{
+    font-size:12px;
+}
+
+.wingoal .topscore{
+    max-width:78px;
+}
+
+.wingoal .topNumber{
+    width:33px;
+}
+
+.wingoal .topScore{
+    width:45px;
+}
+
+.mg{
+    /* height: 22px; */
+    width: calc(100% - 12px);
+    margin: 0px;
+}
+
+.sorry{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:9;
+}
+
+.sorry span{
+    display:block;
+    font-size:26px;
+    margin-bottom:5px;
+}
+
+.sorry a{
+    text-decoration:none;
+    color:#FFF;
+    background:red;
+    padding:12px 20px;
+    display:inline-block;
+    border-radius:5px;
+    font-size:12px;
+    margin-top:15px;
+    text-transform:uppercase;
+}
+
+@media(max-width:810px){
+    .filters{
+        max-width:100vw;
+        overflow-x:scroll;
+    }
+
+    .filters::-webkit-scrollbar {
+        -webkit-appearance: none;
+        display:none;
+    }
+
+    .mobCenter{
+        text-align:center;
+        justify-content:center;
+        width:100%;
+    }
+
+    .allFilters{
+        justify-content: normal !important;
+    }
+
+    .allFilters div{
+        margin-right:7px;
+    }
+
+    .ajustPadd{
+        padding:30px 20px !important;
+        box-sizing:border-box;
+    }
+
+    .probabox{
+        font-size:11px;
+    }
+
+    .topscore{
+        max-width:70px;
+    }
+
+    .topScore{
+        padding:5px 13px;
+    }
+
+    .oddBox{
+        width:60px;
+    }
+
+    .teamName{
+        min-width:135px;
+        max-width:135px;
+        font-size:12px;
+    }
+
+    .boxDiff{
+        padding:15px;
+    }
+
+    .filtersScore{
+        height:65px;
+    }
+
+    .valueOdd{
+        width:45px;
+        padding-left:5px;
+    }
+
+    .typeOdd{
+        min-width:25px;
+    }
+
+    .diffbutBox{
+        max-width:100px;
+    }
+
+    .diffbutBox .topScore{
+        width:60px !important;
+    }
+
+    .diffbutBox .topNumber{
+        width:40px;
+    }
+
+    .diffbutColor{
+        width:120px;
+        margin-left:10px;
+        font-size:11px;
+    }
+
+    .quickName{
+        font-size:13px;
+    }
+
+    .quickName:first-child{
+        text-align:right;
+        display:block;
+        margin-right:10px;
+    }
+
+    .goStats{
+        position:absolute;
+        right:0px;
+        top:-15px;
+    }
+
+    .wingoal .diffbutColor{
+        width: calc(100% - 12px);
+        margin:0px
+    }
+
+    .boxstats .diffbutColor{
+        width:calc(50% - 12px);
+    }
+
+    .boxstats .topscore{
+        max-width:100%;
+    }
+
+    .boxstatsSmall .topscore{
+        max-width:73px;
+    }
+
+    .boxstatsSmall .topNumber{
+        width:30px;
+    }
+
+    .boxstatsSmall .topScore{
+        width:42px !important;
+        padding-left:7px;
+    }
+
+    .matchBox legend{
+        box-sizing:border-box;
+    }
+
+    .matchBox legend a {
+        display:inline-flex;
+        transform:translateY(2px)
+    }
+
+    .matchOption:nth-child(3n){
+        margin-right:8px;
+    }
+
+    .topScore{
+        padding:5px 10px;
+    }
+
+    .teamName{
+        min-width:115px;
+        max-width:115px;
+    }
+
+    .boxDiff{
+        padding: 15px 10px;
+    }
+
+    .diffbutColor{
+        width:105px;
+        margin-left:5px;
+    }
+
+    .appTools{
+        margin-top:80px;
+    }
+}

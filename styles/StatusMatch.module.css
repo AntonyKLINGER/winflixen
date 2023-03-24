@@ -1,0 +1,116 @@
+.appStatus{
+    margin-bottom:20px;
+    border-bottom:1px solid rgba(0,0,0,0.07);
+    padding-bottom:40px;
+}
+
+.appFlagTeam{
+    width:50px;
+    height:100%;
+    position:relative;
+    text-align: center;
+    display: inline-block;
+}
+
+.appFlagTeam span{
+    position:relative !important;
+}
+
+.appFlagTeam img{
+    position:relative !important;
+    width:50px !important;
+    height:auto !important;
+}
+
+.appMetasTeam span{
+    font-weight:700;
+    display:block;
+    margin-top:5px;
+}
+
+.appMetasStatus {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    font-weight: 600;
+}
+
+.appMetasScoreHT {
+    display: block;
+    margin-top: 2px;
+    font-size: 12px;
+    color: #888;
+}
+
+.appMetasScore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.appMetasScore span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin: 0 10px;
+    font-weight:700;
+    font-size:14px;
+}
+
+.linkToTeam{
+    text-decoration: none;
+    color:#000;
+    display:block;
+    text-align:center;
+    width:30%;
+}
+
+.cogreen{
+    color:green;
+    position:relative;
+    display:inline-block;
+    margin-bottom:5px;
+}
+
+.cogreen::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-3px;
+    background:green;
+    width:calc( 100% - 4px );
+    height:2px;
+    animation:is 2s ease infinite;
+    border-radius:5px;
+}
+
+@keyframes is{
+    0%{opacity:0}
+    50%{opacity:1}
+    100%{opacity:0}
+}
+
+@media(max-width:810px){
+    .appMetasScore span{
+        height:30px;
+    }
+
+    .appStatus > div {
+        justify-content: space-between;
+    }
+
+    .breadcrump{
+        padding: 0 25px;
+        font-style: italic;
+    }
+
+    .appMetasTeam{
+        font-size:12px;
+        line-height:1.5em;
+    }
+}

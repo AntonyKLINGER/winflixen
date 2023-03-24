@@ -1,0 +1,254 @@
+.AppVip{
+    margin-top:75px;
+    background:#FFF;
+    padding-bottom:15px;
+}
+
+.AppVip h2{
+    font-size:2rem;
+    line-height:1.2em;
+}
+
+.AppVip p{
+    font-size:1.5rem;
+}
+
+.content{
+    text-align:center;
+    padding:100px 0;
+    max-width:70%;
+    margin-inline: auto;
+    z-index:2;
+    position:relative;
+}
+
+.content h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.content p{
+    font-size:1.5rem;
+    margin-top:0px;
+}
+
+.bigButton{
+    text-decoration:none;
+    color:#FFF;
+    background:red;
+    font-weight:600;
+    padding:30px 50px;
+    box-sizing:border-box;
+    border-radius:15px;
+    font-size:20px;
+    display:inline-block;
+    box-shadow:0 4px 4px -2px rgba(0, 0, 0, 0.1), 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.bigButton:hover{
+    transform:translateY(-4px)
+}
+
+.bigButtonLight{
+    text-decoration:none;
+    color:red;
+    background:#FFF;
+    font-weight:600;
+    padding:30px 50px;
+    box-sizing:border-box;
+    border-radius:15px;
+    font-size:20px;
+    display:inline-block;
+    box-shadow:0 4px 4px -2px rgba(0, 0, 0, 0.1), 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.bigButtonLight:hover{
+    transform:translateY(-4px)
+}
+
+.conditions{
+    display:block;
+    font-size:14px;
+    color:#A4A4AA;
+    margin:15px 0 20px;
+}
+
+.conditionsLight{
+    display:block;
+    font-size:14px;
+    color:#FFF;
+    margin-top:25px;
+    opacity:0.8;
+}
+
+.books{
+    display:block;
+    font-size:14px;
+    margin-top:60px;
+}
+
+.logob{
+    width:100px;
+    height:100%;
+    position:relative;
+    text-align: center;
+    display: inline-block;
+}
+
+.logob span{
+    position:relative !important;
+}
+
+.logob img{
+    position:relative !important;
+    width:100px !important;
+    height:auto !important;
+}
+
+.container{
+    position:relative;
+    overflow:hidden;
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -230px;
+    width: 100%;
+    height: 100%;
+    background: red;
+    opacity:0.1;
+    clip-path: ellipse(50% 40% at 50% 50%);
+    z-index: 1;
+    transform: scale(2);
+}
+
+
+.centeredMedia{
+    width:800px;
+    height:100%;
+    position:relative;
+    text-align: center;
+    display: inline-block;
+    left:50%;
+    transform:translateX(-50%);
+    top:-70px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 32px 64px -16px rgba(0, 0, 0, 0.1);
+    z-index:3;
+}
+
+.centeredMedia span{
+    position:relative !important;
+}
+
+.centeredMedia img{
+    position:relative !important;
+    width:800px !important;
+    height:auto !important;
+}
+
+.feature{
+    text-transform:uppercase;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:10px;
+    display:block;
+}
+
+.tool{
+    width:350px;
+    height:100%;
+    position:relative;
+    text-align: center;
+    display: inline-block;
+    overflow:hidden;
+    z-index:3;
+}
+
+.tool span{
+    position:relative !important;
+}
+
+.tool img{
+    position:relative !important;
+    width:800px !important;
+    height:auto !important;
+}
+
+.redbox{
+    background:red;
+    color:#FFF;
+    padding:100px 20%;
+    box-sizing:border-box;
+    margin-top:150px;
+    text-align:center;
+}
+
+.redbox h2{
+    font-size:3.5rem;
+}
+
+@media(max-width:810px){
+    .AppVip{
+        padding-bottom:0px;
+    }
+
+    .AppVip p{
+        font-size:1.2rem;
+    } 
+
+    .content{
+        max-width:100%;
+        padding:30px 5%;
+    }
+
+    .centeredMedia{
+        width:100%;
+        top:0;
+    }
+
+    .tool{
+        width:100%;
+    }
+
+    .content h1{
+        font-size:2rem;
+    }
+
+    .books{
+        margin-top:30px;
+    }
+
+    .paddinline{
+        padding:0 5%;
+    }
+
+    .container::before{
+        transform:scale(2.5);
+        display:none;
+    }
+
+    .order1{
+        order:2;
+    }
+
+    .order2{
+        order:1;
+    }
+
+    .redbox{
+        margin-top:40px;
+        padding:100px 5%;
+    }
+
+    .redbox h2{
+        font-size:2rem;
+    }
+}

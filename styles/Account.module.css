@@ -1,0 +1,249 @@
+.appAccount{
+    margin-top:100px;
+}
+
+.logout{
+    color:#000;
+    cursor:pointer;
+    text-decoration:underline;
+}
+
+.appAccount h1{
+    position:relative;
+}
+
+.appBoxTelegram{
+    border: 1px solid rgba(0, 0, 0, .07);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.resiliationAsk{
+    font-size:14px;
+    line-height:1.5em;
+    color:#A4A4AA;
+}
+
+.ctaOffer{
+    text-decoration:none;
+    color:white;
+    background:red;
+    font-size:12px;
+    padding:10px 20px;
+    display:inline-block;
+    border-radius:5px;
+    font-weight:700;
+    text-transform: uppercase;
+    cursor:pointer;
+}
+
+.confirmRes{
+    cursor:pointer;
+    font-size:12px;
+    margin-left:10px;
+    background:#F9F9F9;
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:5px;
+    text-transform: uppercase;
+    font-weight:700;
+}
+
+.codeTelegram{
+    border: 0;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    overflow: hidden;
+    max-height: 30px;
+    padding-top: 15px;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    background: #f9f9f9;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
+}
+
+.buttonSub{
+    border: 0;
+    padding: 12px 20px;
+    display: inline-block;
+    font-size: 13px;
+    margin-left: 10px;
+    color: #000;
+    background: #f4f4f4;
+    font-weight:600;
+    border-radius:5px;
+}
+
+.btnWinbot{
+    color: #fff;
+    background: #07bcf3;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 12px 20px;
+    margin-top: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    text-transform:uppercase
+}
+
+.allCommands{
+    padding:20px;
+}
+
+.Commands{
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, .07);
+    cursor:pointer;
+}
+
+.com{
+    color: #000;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 10px;
+    width:80px;
+}
+
+.desc{
+    font-size:14px;
+    display:block;
+}
+
+.tickets{
+    border: 1px solid rgba(0, 0, 0, .07);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.titleTicket{
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+    display:flex;
+    font-weight:700;
+}
+
+.titleTicket span{
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.ticket{
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+    background: #f6f6f6;
+    padding: 10px 15px;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-bottom:5px;
+    display:flex;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.contenu{
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, .07);
+    background:#FFF;
+}
+
+.answer{
+    display: block;
+    font-size: 12px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-weight: 400;
+    margin-bottom: 5px;
+    color: #000 !important;
+    background:#f6f6f6;
+    border-radius:5px;
+}
+
+.auteur {
+    display: block;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    padding-bottom: 5px;
+    margin-bottom:5px;
+    color:#000;
+}
+
+.openTicket{
+    border: 1px solid rgba(0, 0, 0, .07);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.resize{
+    font-size:12px;
+}
+
+.textField > label{
+    font-size:14px
+}
+
+.textArea{
+    font-size:14px;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    width:100%;
+    box-sizing: border-box;
+    border-radius:5px;
+    border:1px solid rgba(0,0,0,0.3);
+    min-height:110px;
+    padding:12px;
+    margin-top:10px;
+}
+
+.ask{
+    font-size:14px;
+    font-weight:700;
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    display:block;
+    padding:10px 0;
+    cursor:pointer;
+}
+
+.answers p{
+    color:#000;
+}
+
+.statusSub{
+    font-size:12px;
+    margin-left:10px;
+    display:inline-block;
+    position:absolute;
+    top:0;
+    right:0;
+    line-height:1;
+    padding:7px 10px;
+    border-radius:5px;
+}
+
+.statusSub a{
+    text-decoration:none;
+    color:red;
+}
+
+@media(max-width:810px){
+    .appAccount{
+        margin-top:80px;
+    }
+}

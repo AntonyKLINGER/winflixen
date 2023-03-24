@@ -1,0 +1,136 @@
+.appResults, .appWinBot{
+    margin-top:100px;
+}
+
+.chiffresRef{
+    background:red;
+    position:relative;
+    overflow:hidden;
+}
+
+.chiffresRef::before{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:50%;
+    width:700px;
+    height:700px;
+    background:#FFF;
+    z-index:1;
+    opacity:0.1;
+    transform:translate(-50%, 30%);
+    border-radius:50%;
+}
+
+.chiffresRef::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:50%;
+    width:700px;
+    height:700px;
+    background:#FFF;
+    z-index:1;
+    opacity:0.1;
+    transform:translate(-50%, 30%) scale(1.1);
+    border-radius:50%;
+}
+
+.allRef{
+    z-index:2;
+    position:relative;
+}
+
+.infoRef{
+    text-align:center;
+    border-right:1px solid rgba(255,255,255,.3)
+}
+
+.infoRef:last-child{
+    border-right:0px;
+}
+
+.typeRef{
+    display:block;
+    font-size:12px;
+    opacity:1;
+    color:#FFF;
+    font-weight:400;
+}
+
+.infoRef span:first-child{
+    font-size:20px;
+    margin-bottom:0px;
+    opacity:1;
+    color:#FFF;
+}
+
+.numberRef{
+    font-size:24px;
+    font-weight:700;
+    margin-top:5px;
+    display:block;
+    color:#FFF;
+}
+
+.ctaRef{
+    text-decoration:none;
+    color:red;
+    background:white;
+    font-size:12px;
+    text-transform: uppercase;
+    font-weight:700;
+    padding:13px 24px;;
+    border-radius:10px;
+    display:inline-block;
+    transition:.2s ease;
+}
+
+.ctaRef:hover{
+    transform:translateY(-4px)
+}
+
+.titleRef{
+    font-size:11px;
+    text-transform:uppercase;
+    color:red;
+    background:white;
+    display:inline-block;
+    font-weight:700;
+    padding:5px 12px;
+    border-radius:35px;
+}
+
+@media(max-width:810px){
+    .appResults{
+        margin-top:80px;
+    }
+
+    .chiffresRef{
+        border-radius:18px;
+        padding:25px 0 !important;
+    }
+
+    .infoRef:nth-child(2n){
+        border-right:0px;
+    }
+
+    .infoRef:nth-child(1){
+        padding-bottom:20px;
+        border-right:1px solid rgba(255,255,255,0.2);
+        border-bottom:1px solid rgba(255,255,255,0.2)
+    }
+
+    .infoRef:nth-child(2){
+        padding-bottom:20px;
+        border-bottom:1px solid rgba(255,255,255,0.2)
+    }
+
+    .infoRef:nth-child(3), .infoRef:last-child{
+        padding-top:20px;
+    }
+
+    .infoRef:nth-child(3){
+        border-right:1px solid rgba(255,255,255,0.2)
+    }
+}

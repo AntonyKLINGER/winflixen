@@ -1,0 +1,52 @@
+.AppGestion{
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, .05);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius:10px;
+}
+
+.AppGestion label, .AppGestion input{
+    font-size:14px;
+    margin:0px !important;
+}
+
+.AppGestion .textField{
+    margin-inline:10px;
+}
+
+.radios label, .radios span, .radios input, .radios label span{
+    font-size:12px !important;
+}
+
+.radios span{
+    padding:0;
+}
+
+.radios label{
+    margin-right:10px !important;
+}
+
+.radios span{
+    margin-right:1px !important;
+}
+
+.radios{
+    font-size:12px !important;
+}
+
+.radios label{
+    margin-bottom:2px !important;
+}
+
+.result{
+    background: #dfffdf;
+    color: green;
+    border-radius:10px;
+    padding:15px;
+    box-sizing:border-box;
+    font-size:14px;
+}
+
+.textMise{
+    font-size:12px;
+}

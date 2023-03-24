@@ -1,0 +1,326 @@
+.appHeader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:99999;
+    background:#FFF;
+}
+
+.appLogo{
+    width:110px;
+    height:24.75px;
+    position:relative;
+    display:block;
+}
+
+.ulPrimary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.primaryLink {
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    display: block;
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.primaryLink::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: .2s;
+}
+
+.primaryLink:hover::after {
+    opacity: 1;
+}
+
+.appMyAccount{
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    transition: .1s;
+    position:relative;
+}
+
+.appMyAccount:hover {
+    opacity: .5;
+}
+
+.myAccountTitle{
+    margin-left:8px;
+    color:#000;
+    font-size:16px;
+    font-weight:700;
+}
+
+.myAccountTitle span{
+    font-size:10px;
+    display:block;
+    font-weight:400;
+}
+
+.avatar{
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.appLogout{
+    text-decoration: none;
+    color:#000;
+}
+
+.appLogout span{
+    font-size:16px;
+    margin-left:10px;
+}
+
+.appContainer {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    top: 65px;
+    height: auto;
+    left: 0;
+    padding: 30px 0 20px;
+    display: none;
+}
+
+li:hover .appContainer{
+    display:block;
+}
+
+.bannerTitle{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(0, 0, 0, .07);
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.bannerTitle span{
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.appList{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+.appList a{
+    text-decoration: none;
+    color: #000;
+    padding: 5px 0;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    transition: .1s;
+}
+
+.appList a:hover{
+    color:red;
+}
+
+.appList span{
+    font-size: 14px;
+    opacity: .3;
+    margin-right: 5px;
+}
+
+.flagTeam{
+    width:20px;
+    height:20px;
+    position:relative;
+    margin-right:7px;
+}
+
+.appMobileMenu{
+    display:none;
+}
+
+.logto{
+    text-decoration:none;
+    color:#000;
+    font-weight:700;
+    margin-right:20px;
+}
+
+@media(max-width:810px){
+    .appMenu{
+        display:none;
+    }
+
+    .appMobileMenu{
+        display:block;
+        padding:20px;
+        z-index:9999;
+        box-sizing:border-box;
+        box-shadow: 1px 20px 30px rgba(0,0,0,0.05);
+    }
+
+    .appmFixed{
+        z-index:9999;
+        position:relative;
+    }
+
+    .menuButton{
+        width:20px;
+        height:20px;
+        border:0px;
+        position:relative;
+        transform:translateY(2px);
+        cursor:pointer;
+        background:transparent !important;
+    }
+
+    .menuButton span{
+        width:100%;
+        display:block;
+        height:2px;
+        background:black;
+        margin-bottom:4px;
+    }
+
+    .appmLogo{
+        width:100px;
+        height:22.5px;
+        position:relative;
+        margin-left:20px;
+    }
+
+    .appLogoutMobile{
+        text-decoration: none;
+        color:#000;
+    }
+
+    .appLogoutMobile span{
+        font-size:20px;
+        margin-left:10px;
+    }
+
+    .appmContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        padding-top: 80px;
+        z-index: 9993;
+        transform: translateX(-100%);
+        transition: .2s;
+        overflow: hidden;
+    }
+
+    .appmLine {
+        width: 300%;
+        display: flex;
+        transition: .2s;
+    }
+
+    .appmContent:first-child {
+        overflow-y: scroll;
+        max-height: 70vh;
+    }
+
+    .appmContent {
+    width: 100vw;
+    }
+
+    .appmTitle {
+        display: block;
+    }
+   
+    .appmTitle, .appmTitleBack, .appmTitleSub {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .appmTitle, .appmTitleSub {
+        background: #f9f9f9;
+        font-weight: 700;
+    }
+
+    .appmPrimary {
+        list-style: none;
+        overflow-y: scroll;
+        max-height: 60vh;
+        margin:0;
+        padding:0;
+    }
+
+    .appmPrimary li a {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, .05);
+        padding:10px;
+        font-size:14px;
+        text-decoration:none;
+        color:#000;
+        cursor:pointer;
+    }
+
+    .appmPrimary li a span{
+        font-size:18px;
+        margin-right:7px;
+        opacity:0.4;
+    }
+
+    .appmTitleBack {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        font-size:14px;
+        padding:10px;
+        border-top:1px solid rgba(0,0,0,0.05);
+        cursor:pointer;
+    }
+
+    .appmTitleBack span{
+        font-size:18px;
+    }
+
+    .appmFlag{
+        width:20px;
+        height:20px;
+        position:relative;
+        margin-right:7px;
+    }
+
+    .appmSub{
+        background:#F9F9F9;
+        font-size:14px;
+        padding:10px;
+        display:flex;
+        align-items:center;
+        font-weight:700;
+    }
+
+    .appBtnVAccount{
+        text-decoration:none;
+    }
+    
+    .appMyAccount{
+        padding-bottom:5px;
+    }
+}

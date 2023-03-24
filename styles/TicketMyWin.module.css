@@ -1,0 +1,181 @@
+.ticket {
+    background: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 1px 1px 25px rgba(0,0,0,0.05);
+}
+
+.status{
+    width:12px;
+    height:100%;
+    position:relative;
+    border-radius:18px;
+    overflow:hidden;
+    margin-right:10px;
+}
+
+.status span{
+    position:relative !important;
+}
+
+.status img{
+    position:relative !important;
+    width: 30px !important;
+    height: auto !important;
+}
+
+.titleTicket {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.rounder{
+    display:inline-block;
+    width:6px;
+    height:6px;
+    margin-right:5px;
+    background:red;
+    border-radius:50%;
+    line-height:1em;
+    transform:translateY(1px)
+}
+
+.rappel{
+    display:block;
+    font-size:10px;
+    padding-top:10px;
+    margin-top:15px;
+    opacity:0.3;
+    border-top:1px solid rgba(0,0,0,0.2);
+    line-height:1em;
+}
+
+.statusTicket {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+
+.contentTicket {
+    display: block;
+    font-size: 13px;
+    padding:0px;
+    min-height: 125px;
+    -webkit-appearance: none;
+    border: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-radius: 0px;
+    margin-top: 10px;
+    padding-top:15px;
+}
+
+.pronoTicket{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 10px;
+}
+
+.pronoTicket:last-child{
+    border-bottom:0px !important;
+}
+
+.matchTicket {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.choixTicket{
+    display: flex;
+    align-items:center;
+    font-size: 12px;
+    margin-top:3px;
+}
+
+.dateTicket{
+    display: block;
+    font-size: 9px;
+}
+
+.score{
+    display: block;
+    margin-top: 3px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.cote{
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #F4F4F4;
+    padding: 4px 9px;
+}
+
+.totalOdd{
+    background:#ff9b00;
+    color:#FFF;
+    display:inline-flex;
+    padding:3px 8px;
+    font-size:12px;
+    font-weight:600;
+    border-radius:5px;
+}
+
+.statusTick{
+    font-size:12px;
+    font-weight: 600;
+    background:red;
+    display:inline-block;
+    padding:3px 6px;
+    border-radius:5px;
+}
+
+.boxGains{
+    font-size:12px;
+}
+
+.gains, .total {
+    display: block;
+    font-size: 12px;
+}
+
+.gains{
+    margin-top:2px;
+}
+
+.mise{
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.coin{
+    width:12px;
+    height:100%;
+    position:relative;
+    border-radius:18px;
+    overflow:hidden;
+    margin-right:3px;
+}
+
+.coin span{
+    position:relative !important;
+}
+
+.coin img{
+    position:relative !important;
+    width: 30px !important;
+    height: auto !important;
+}

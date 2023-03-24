@@ -1,0 +1,97 @@
+.title{
+    text-align:left !important;
+    margin:0px 0px 20px !important;
+    font-size:24px !important;
+    display:flex;
+    align-items:center;
+}
+
+.logoTeamT{
+    width:30px;
+    height:100%;
+    position:relative;
+}
+
+.logoTeamT span{
+    position:relative !important;
+}
+
+.logoTeamT img{
+    position:relative !important;
+    width: 30px !important;
+    height: auto !important;
+}
+
+.appBtnV2{
+    display: inline-block;
+    border-radius: 10px;
+    color: #000;
+    font-weight: 700;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 12px;
+    background: #f9f9f9;
+}
+
+.tagChamp {
+    display: inline-flex;
+    background: #f7f7f7;
+    color: #000;
+    font-weight: 700;
+    padding: 8px 16px;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    border-radius: 5px;
+    transition: .1s;
+    text-decoration:none;
+    align-items:center;
+    font-size: 12px;
+}
+
+.icon{
+    font-size:20px;
+    margin-right:8px;
+}
+
+.pronoTeamCover img{
+    border-radius:15px;
+}
+
+.pronoTeamCover{
+    width:100%;
+    position:relative;
+}
+
+.pronoTeamCover span{
+    position:relative !important;
+}
+
+.pronoTeamCover img{
+    position:relative !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.seoTxt ul, .seoTxt li{
+    font-size:14px;
+    list-style: circle !important;
+    margin:0px;
+    padding:0px;
+    list-style-position: inside !important;
+    color:#A4A4AA;
+    line-height:1.5em;
+}
+
+.seoTxt ul{
+    margin-bottom:20px;
+}
+
+.seoTxt h2 strong, .seoTxt h3 strong{
+    font-weight:700;
+}
+
+@media(max-width:810px){
+    .title{
+        font-size:20px !important;
+    }
+}
