@@ -115,6 +115,7 @@ function MyApp({ Component, pageProps }) {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossOrigin="anonymous" referrerPolicy="no-referrer" />  
       <meta name="ga-site-verification" content="ljCh12CaXuf17p9ziF0e8rA8" />
       <meta name="p:domain_verify" content="19ccf280dd08d911476e49a1ca198feb"/>
+      <link rel="canonical" href={`https://winflix.net/en${router.asPath}`} />
     </Head>
     <UserContext.Provider value={{tokenUser, setTokenUser, user, setUser, sub, setSub, open, setOpen, loadTicket, setLoadTicket, ticket, setTicket, cote, setCote, gain, setGain, timer, setTimer, loadUser, setLoadUser}}>
       <Header />
