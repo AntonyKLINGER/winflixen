@@ -178,7 +178,7 @@ export default function PronosticMatch({datas}){
                             <meta itemProp="position" content="4" />
                         </li>
                     </ol>
-                    <p className={`${styles.breadcrump} mTop30 mBot20`}><Link href="/fussball">Fussball</Link> {'>'} <Link href="/fussball/vorhersagen/">Fussball Vorhersagen</Link> {`> ${datas.title}`}</p>         
+                    <p className={`${styles.breadcrump} mTop30 mBot20`}><Link href="/football">Football</Link> {'>'} <Link href="/football/predictions/">Football Predictions</Link> {`> ${datas.title}`}</p>         
                 </>
                 )} 
                     
