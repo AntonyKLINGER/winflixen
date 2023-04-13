@@ -116,6 +116,7 @@ function MyApp({ Component, pageProps }) {
       <meta name="ga-site-verification" content="ljCh12CaXuf17p9ziF0e8rA8" />
       <meta name="p:domain_verify" content="19ccf280dd08d911476e49a1ca198feb"/>
       <link rel="canonical" href={`https://winflix.net/en${router.asPath}`} />
+      <link rel="alternate" href={`https://winflix.net/en${router.asPath}`} hrefLang="x-default" />
     </Head>
     <UserContext.Provider value={{tokenUser, setTokenUser, user, setUser, sub, setSub, open, setOpen, loadTicket, setLoadTicket, ticket, setTicket, cote, setCote, gain, setGain, timer, setTimer, loadUser, setLoadUser}}>
       <Header />
