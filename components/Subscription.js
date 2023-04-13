@@ -7,6 +7,13 @@ import axios from 'axios'
 import {WINFLIX_URL} from '../config'
 import styles from '../styles/Register.module.css'
 import Script from 'next/script'
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+import PayPalButton from '../components/PayPalButton';
 
 export default function Subscription(){
     const stripe = useStripe()
@@ -27,7 +34,33 @@ export default function Subscription(){
     const [nextPayment, setNextPayment] = useState(null)
     const [trial, setTrial] = useState(null) 
     const [complete, setComplete] = useState(false)
+    const [amountSub, setAmountSub] = useState("hebdo")
+    const [description, setDescription] = useState("Abonnement hebdo VIP EN")
+    const [method, setMethod] = React.useState('paypal');
+    const [infos, setInfos] = useState({
+      name: "",
+      firstname: "",
+      email: "",
+      password: "",
+      country: "US",
+      phone: ""
+    })
 
+    const handleChange = (event) => {
+      setMethod(event.target.value);
+    };
+
+    const handleChangeInfos = (event) => {
+      const { name, type, value } = event.target
+      setInfos(prev => {
+        return {
+          ...prev,
+          [name] : value
+        }
+      })
+    }
+
+  
     const selectProduct = (id) => {
       setProductId(id)
     }
@@ -42,12 +75,18 @@ export default function Subscription(){
       if(productId == "3512"){
         setNextPayment(date.getFullYear()+'-'+String(date.getMonth()+1).padStart(2, '0')+'-'+String(date.getDate()).padStart(2, '0')+' '+String(date.getHours()).padStart(2, '0')+':'+String(date.getMinutes()).padStart(2, '0')+':'+String(date.getMinutes()).padStart(2, '0'))
         setTrial(date.getFullYear()+'-'+String(date.getMonth()+1).padStart(2, '0')+'-'+String(date.getDate()).padStart(2, '0')+' '+String(date.getHours()).padStart(2, '0')+':'+String(date.getMinutes()).padStart(2, '0')+':'+String(date.getMinutes()).padStart(2, '0'))
+        setAmountSub("hebdo")
+        setDescription("Abonnement hebdo VIP EN")
       }
       if(productId == "3513"){
         setNextPayment(dateMonth.getFullYear()+'-'+String(dateMonth.getMonth()+1).padStart(2, '0')+'-'+String(dateMonth.getDate()).padStart(2, '0')+' '+String(dateMonth.getHours()).padStart(2, '0')+':'+String(dateMonth.getMinutes()).padStart(2, '0')+':'+String(dateMonth.getMinutes()).padStart(2, '0'))
+        setAmountSub("mensuel")
+        setDescription("Abonnement mensuel VIP EN")
       }   
       if(productId == "3520"){
         setNextPayment(dateYear.getFullYear()+'-'+String(dateYear.getMonth()+1).padStart(2, '0')+'-'+String(dateYear.getDate()).padStart(2, '0')+' '+String(dateYear.getHours()).padStart(2, '0')+':'+String(dateYear.getMinutes()).padStart(2, '0')+':'+String(dateYear.getMinutes()).padStart(2, '0'))
+        setAmountSub("annuel")
+        setDescription("Abonnement annuel VIP EN")
       }   
     }, [productId])
 
@@ -68,7 +107,8 @@ export default function Subscription(){
         //console.log("produit choisi : ", productId)
 
         const testMail = await checkmail(event.target.email.value)
-        //console.log(testMail);
+
+        if(method == "stripe"){
 
         if(testMail.message == "disponible"){
 
@@ -198,7 +238,24 @@ export default function Subscription(){
               setError("Sorry, this email address is already in use.")
               setIsLoading(false)
             }
+          }
+      };
 
+
+      const handleSubscriptionPayPal = (details) => {
+        // check si tout s'est bien passé
+
+        // création d'un user
+
+        // création d'une commande
+
+        // création d'une subscription
+
+        // désactiver toutes les autres subs si il y en a
+
+        // setComplete(true)
+
+        console.log("Abonnement réussi :", details);
       };
     
 
@@ -218,20 +275,20 @@ export default function Subscription(){
                     <div className={styles.form}>
                     <label>
                         <span>E-mail*</span>
-                        <input type="email" name="email" required />
+                        <input type="email" name="email" value={infos.email} onChange={handleChangeInfos} required />
                     </label>
                     <label>
                         <span>Password*</span>
-                        <input type="password" name="password" required />
+                        <input type="password" name="password" value={infos.password} onChange={handleChangeInfos} required />
                     </label>
                     <div className="flex" style={{ gap: '20px' }}>
                       <label style={{ width: "60%"}}>
                           <span>Phone*</span>
-                          <input placeholder="" type="tel" name="tel" required />
+                          <input placeholder="" type="tel" name="phone" value={infos.phone} onChange={handleChangeInfos} required />
                       </label>
                       <label style={{ width: "40%"}}>
                         <span>Country*</span>
-                        <select defaultValue="US" name="country" required>
+                        <select name="country" value={infos.country} onChange={handleChangeInfos} required>
                         <option value="AF">Afghanistan</option>
                         <option value="AX">Aland Islands</option>
                         <option value="AL">Albania</option>
@@ -489,24 +546,36 @@ export default function Subscription(){
                     </div>
                     <label>
                       <span>Name*</span>
-                        <input type="text" name="lastName" required />
+                        <input type="text" name="lastName" value={infos.lastName} onChange={handleChangeInfos} required />
                     </label>
                     <label>
                       <span>First Name*</span>
-                        <input type="text" name="firstName" required />
+                        <input type="text" name="firstName" value={infos.firstName} onChange={handleChangeInfos} required />
                     </label>
                     </div>
-                    <div className={styles.Stripe}>
-                      <span className={styles.method}><span className="material-icons">credit_card</span>Method of payment for the card</span>
-                      <span className={styles.conditions}>Secure payment through Stripe operator. If you opt for the Hebdo Passport in the first week, no amount will be charged. All your card details are safe.</span>
-                      <CardElement options={{ hidePostalCode: true }} />
+                    <div className={styles.boxMethod}>                      
+                      <div className={styles.chooseMethod}>
+                      <p>All payment methods are completely secure. All your data will remain confidential throughout your VIP subscription.</p>
+                      <span className={styles.paymentMethod}>Choose a Payment Method*</span>
+                      <FormControl sx={{ width: "100%" }}>
+                        <RadioGroup
+                          aria-labelledby="demo-radio-buttons-group-label"
+                          name="radio-buttons-group"
+                          value={method}
+                          onChange={handleChange}
+                        >
+                          {/* <FormControlLabel value="stripe" control={<Radio />} label="Pay by credit card (Stripe)" /> */}
+                          <FormControlLabel value="paypal" control={<Radio />} label="Pay with PayPal" />
+                        </RadioGroup>
+                      </FormControl>
+                      </div>
                     </div>
                     </div>
                 </div>
                 <div className="w50 wm100 mmTop20">
                   <div>
                     <div className={isLoading == true ? "loadingVIP" : ""}>
-                    <h3 className="mBot20">Please select a formula :</h3>
+                    <h3 className="mBot20">Please select a subscription plan :</h3>
                     <label onClick={() => selectProduct(3512)}>
                       <div className={`${styles.subChoice} ${productId == 3512 && styles.active}`}>
                         <div className="flex aligncenter space-between">
@@ -516,10 +585,10 @@ export default function Subscription(){
                             </div>
                             <div>
                               <span className={styles.titleSub}>Pass weekly</span>
-                              <span className={styles.saveSub}>50% save</span>
+                              <span className={styles.saveSub}>100% save</span>
                             </div>
                           </div>
-                          <span className={styles.priceSub}>4.90$ <span>/ <del>9.90$</del></span></span>
+                          <span className={styles.priceSub}>0.00$ <span>/ <del>9.90$</del></span></span>
                         </div>                      
                       </div>                    
                     </label>
@@ -556,11 +625,39 @@ export default function Subscription(){
                       </div>                    
                     </label>
                     </div>
-                    <div className="text-right">
-                      <button type="submit" className={styles.Submit} disabled={isLoading}>
-                          {isLoading ? 'Account creation...' : 'Choose this pass'}
-                      </button>
-                    </div>
+                    {method == "stripe" && (
+                      <>
+                      <div className={styles.Stripe}>
+                        <span className={styles.method}><span className="material-icons">credit_card</span>Method of payment for the card</span>
+                        <span className={styles.conditions}>Secure payment through Stripe operator. All your card details are safe.</span>
+                        {amountSub && infos.firstName && infos.lastName && infos.email && infos.password ? (
+                          <>
+                            <CardElement options={{ hidePostalCode: true }} />
+                            <div className="text-right mTop5">
+                              <button type="submit" className={styles.Submit} disabled={isLoading}>
+                                  {isLoading ? 'Account creation...' : 'Pay with card'}
+                              </button>
+                            </div>                          
+                          </>
+                        ) : (
+                          <p><strong>Account information missing.</strong><br />Please complete all account information before payment.</p>
+                        )}                          
+                      </div>
+                      </>
+                    )}
+                    {method == "paypal" && (
+                      <div className={styles.Stripe}>
+                        <span className={styles.method}><span className="material-icons">credit_card</span>Method of payment with PayPal</span>
+                        <span className={styles.conditions}>Secure payment through PayPal operator. All your card details are safe.</span>
+                        {infos.firstName ? (
+                            <>
+                                <PayPalButton infos={infos} abo={amountSub} onComplete={setComplete} />
+                            </>
+                        ) : (
+                          <p><strong>Account information missing.</strong><br />Please complete all account information before payment.</p>
+                        )}                   
+                      </div>                      
+                    )}
                   </div>
                 </div>
               </div>
@@ -570,7 +667,7 @@ export default function Subscription(){
               <div className="text-center">
                 <span className={`material-icons ${styles.verif}`}>verified</span>
                 <span className={styles.congrats}>Congratulations, you are a VIP member!</span>
-                <span className={styles.toStart}>Per initial, vai semplicemente alla page di connessione e connettiti con i tuoi identificatori informati duree la registrazione.</span>
+                <span className={styles.toStart}>For initial, simply go to the login page and log in with your identifiers informed during registration.</span>
                 <div className="text-center mTop20">
                   <Link href="/login" className={styles.toLog}>Login</Link>
                 </div>

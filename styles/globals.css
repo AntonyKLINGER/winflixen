@@ -1549,6 +1549,14 @@ p a{
   margin-right:6px;
 }
 
+.MuiFormControlLabel-labelPlacementEnd{
+  margin:0px !important;
+}
+
+.css-ahj2mt-MuiTypography-root{
+  font-size:15px;
+}
+
 @media(max-width:810px){
   .ctaDesktopOutils{
     height:210px;

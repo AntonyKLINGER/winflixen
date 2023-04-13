@@ -244,8 +244,8 @@ export default function Header(){
                         <div className={`${styles.appmContent} app-st-1`}>
                             <span className={styles.appmTitle}>The most important tools</span>
                             <ul className={styles.appmPrimary}>
-                                <li onClick={openMenu}><LinkMenu icon="timer" value="Livescore" href="/fussball/" /></li>
-                                <li onClick={openMenu}><LinkMenu icon="done_all" value="Results" href="/ergebnisse/" /></li>
+                                <li onClick={openMenu}><LinkMenu icon="timer" value="Livescore" href="/football/" /></li>
+                                <li onClick={openMenu}><LinkMenu icon="done_all" value="Results" href="/results/" /></li>
                                 <li onClick={openMenu}><LinkMenu icon="settings_suggest" value="Predictions Tools" href="/top-5-predictions-tools/" /></li>
                                 <li onClick={openMenu}><LinkMenu icon="tips_and_updates" value="WinTips" href="/football-tips-prediction/" /></li>
                                 <li onClick={openMenu}><LinkMenu icon="smart_toy" value="WinBot" href="/prediction-live-football" /></li>
