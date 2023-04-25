@@ -31,7 +31,7 @@ export default function NewHome(){
     const [actus, setActus] = React.useState(null)
     const [loadBlog, setLoadBlog] = React.useState(false)
     const [loadActus, setLoadActus] = React.useState(false)
-    const [graph, setGraph] = React.useState({month: "03", year: 2023, name: "March"})
+    const [graph, setGraph] = React.useState({month: "04", year: 2023, name: "April"})
     const [pronosafes, setPronoSafes] = React.useState(null)
     const [loadPronoSafes, setLoadPronoSafes] = React.useState(false)
     const [pronocotes, setPronoCotes] = React.useState(null)
@@ -318,9 +318,9 @@ export default function NewHome(){
                         <span className={styles.minih2}>Winflix is ​​the software most assured to optimize Tuesday's sporting fair based on: bankroll monitoring of today's Pronostici Sicuri data:</span>
                         <div className="mTop20 mmTop10">
                             <div className={`${styles.buttonInline} mBot20 mmBot0`}>
+                            <Chip onClick={() => callGraph('04', '2023', 'April')} sx={{ marginRight: '10px', border: '0px', boxShadow: '1px 1px 25px rgba(0,0,0,0.07)', fontWeight: '600', padding: '10px 10px' }} variant="outlined" label="April 2023" />
                             <Chip onClick={() => callGraph('03', '2023', 'March')} sx={{ marginRight: '10px', border: '0px', boxShadow: '1px 1px 25px rgba(0,0,0,0.07)', fontWeight: '600', padding: '10px 10px' }} variant="outlined" label="March 2023" />
                             <Chip onClick={() => callGraph('02', '2023', 'February')} sx={{ marginRight: '10px', border: '0px', boxShadow: '1px 1px 25px rgba(0,0,0,0.07)', fontWeight: '600', padding: '10px 10px' }} variant="outlined" label="February 2023" />
-                            <Chip onClick={() => callGraph('01', '2023', 'January')} sx={{ marginRight: '10px', border: '0px', boxShadow: '1px 1px 25px rgba(0,0,0,0.07)', fontWeight: '600', padding: '10px 10px' }} variant="outlined" label="January 2023" />
                             <Chip onClick={() => callGraph('', '2022', 'Year 2022')} sx={{ marginRight: '10px', border: '0px', boxShadow: '1px 1px 25px rgba(0,0,0,0.07)', fontWeight: '600', padding: '10px 10px' }} variant="outlined" label="Year 2022" />
                             </div>
                             <GraphResults name={graph.name} month={graph.month} year={graph.year} />

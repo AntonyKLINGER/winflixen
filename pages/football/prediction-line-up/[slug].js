@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { UserContext } from '../../../UserContext'
+import Router, { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/legacy/image'
@@ -25,6 +26,7 @@ export default function FormeStats({datas}){
 
     const data = datas.datas
     const title = `Probable formations ${data.homeTeam.team_name} ${data.awayTeam.team_name} from ${data.date} 👉 Probably and officially`;
+    const router = useRouter()
 
     const {user, setUser} = useContext(UserContext)
     const {sub, setSub} = useContext(UserContext)
@@ -49,11 +51,11 @@ export default function FormeStats({datas}){
                 <link rel="alternate" hrefLang="fr-fr" href={`https://winflix.net/football/compositions/compositions-${datas.trads.fr.teamA}-${datas.trads.fr.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.fr.league}/`} />
                 <link rel="alternate" hrefLang="de-de" href={`https://winflix.net/de/fussball/aufstellung/aufstellung-${datas.trads.teamA}-${datas.trads.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                 <link rel="alternate" hrefLang="it-it" href={`https://winflix.net/it/calcio/probabili-formazioni/formazione-${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
-                <link rel="alternate" hrefLang="en-en" href={`https://winflix.net/en/football/prediction-line-up/line-up-${data.homeTeam.team_url}-${data.awayTeam.team_url}-${data.date.replaceAll("/", "-")}-${data.league_name.replaceAll(" ", "-").toLowerCase()}/`} />
+                <link rel="alternate" hrefLang="en-en" href={`https://winflix.net/en${router.asPath}`} />
                 <link rel="alternate" hrefLang="fr" href={`https://winflix.net/football/compositions/compositions-${datas.trads.fr.teamA}-${datas.trads.fr.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.fr.league}/`} />
                 <link rel="alternate" hrefLang="de" href={`https://winflix.net/de/fussball/aufstellung/aufstellung-${datas.trads.teamA}-${datas.trads.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                 <link rel="alternate" hrefLang="it" href={`https://winflix.net/it/calcio/probabili-formazioni/formazione-${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
-                <link rel="alternate" hrefLang="en" href={`https://winflix.net/en/football/prediction-line-up/line-up-${data.homeTeam.team_url}-${data.awayTeam.team_url}-${data.date.replaceAll("/", "-")}-${data.league_name.replaceAll(" ", "-").toLowerCase()}/`} />
+                <link rel="alternate" hrefLang="en" href={`https://winflix.net/en${router.asPath}`} />
             </Head>
             <ol itemScope itemType="http://schema.org/BreadcrumbList" style={{display: "none"}}>
               <li itemProp="itemListElement" itemScope

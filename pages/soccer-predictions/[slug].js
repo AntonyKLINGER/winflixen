@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { UserContext } from '../../UserContext'
+import Router, { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/legacy/image'
@@ -14,6 +15,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 export default function FormeStats({datas}){
 
+    const router = useRouter();
     const JSONLD = {
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -91,14 +93,14 @@ export default function FormeStats({datas}){
             <Head>
                 <title>{title}</title>
                 <meta name="description" content={`🥇 Best predictions ${data.name} Bet only! Our reliable tips and predictions for your sports betting`} />
-                <link rel="alternate" hrefLang="fr-fr" href={`https://winflix.net/prono-foot/${data.trads.fr}/`} />
+                <link rel="alternate" hrefLang="fr-fr" href={`https://winflix.net/prono-foot/pronostic-${data.trads.fr}/`} />
                 <link rel="alternate" hrefLang="de-de" href={`https://winflix.net/de/sportwetten-tipps/prognose-${data.trads.de}/`} />
                 <link rel="alternate" hrefLang="it-it" href={`https://winflix.net/it/scommessa-calcio/pronostici-${data.trads.it}/`} />
-                <link rel="alternate" hrefLang="en-en" href={`https://winflix.net/en/soccer-predictions/prediction-${data.slug}/`} />
-                <link rel="alternate" hrefLang="fr" href={`https://winflix.net/prono-foot/${data.trads.fr}/`} />
+                <link rel="alternate" hrefLang="en-en" href={`https://winflix.net/en${router.asPath}`} />
+                <link rel="alternate" hrefLang="fr" href={`https://winflix.net/prono-foot/pronostic-${data.trads.fr}/`} />
                 <link rel="alternate" hrefLang="de" href={`https://winflix.net/de/sportwetten-tipps/prognose-${data.trads.de}/`} />
                 <link rel="alternate" hrefLang="it" href={`https://winflix.net/it/scommessa-calcio/pronostici-${data.trads.it}/`} /> 
-                <link rel="alternate" hrefLang="en" href={`https://winflix.net/en/soccer-predictions/prediction-${data.slug}/`} />               
+                <link rel="alternate" hrefLang="en" href={`https://winflix.net/en${router.asPath}`} />               
                 <script type="application/ld+json">
                     {JSON.stringify(JSONLD)}
                 </script>       

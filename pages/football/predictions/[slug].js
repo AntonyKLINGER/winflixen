@@ -1,6 +1,6 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import { UserContext } from '../../../UserContext'
-import { useRouter } from 'next/router'
+import Router, { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/legacy/image'
@@ -18,11 +18,13 @@ import PronosticsFoot from '../../../components/PronosticJour'
 import styles from '../../../styles/PronosticMatch.module.css'
 import { WINFLIX_URL } from '../../../config'
 import Others from '../../../components/OtherMatchs'
+import axios from 'axios'
 
 export default function PronosticMatch({datas}){
 
     const router = useRouter()
     const path = router.asPath
+
 
     const [odds, setOdds] = React.useState(null)
     const [load, setLoad] = React.useState(false)
@@ -94,6 +96,33 @@ export default function PronosticMatch({datas}){
         }
     }, [])
 
+
+    const [homeTeamStatus, setHomeTeamStatus] = useState(500);
+    const [awayTeamStatus, setAwayTeamStatus] = useState(500);
+  
+    useEffect(() => {
+      const checkStatus = async () => {
+        const homeTeamUrl = `https://winflix.net/en/soccer-predictions/prediction-${data.homeTeam.team_url}`;
+        const awayTeamUrl = `https://winflix.net/en/soccer-predictions/prediction-${data.awayTeam.team_url}`;
+  
+        try {
+          const homeTeamResponse = await axios.get(homeTeamUrl);
+          setHomeTeamStatus(homeTeamResponse.status);
+        } catch (error) {
+          setHomeTeamStatus(error.response.status);
+        }
+  
+        try {
+          const awayTeamResponse = await axios.get(awayTeamUrl);
+          setAwayTeamStatus(awayTeamResponse.status);
+        } catch (error) {
+          setAwayTeamStatus(error.response.status);
+        }
+      };
+  
+      checkStatus();
+    }, [data.homeTeam.team_url, data.awayTeam.team_url]);
+
     if(path.includes("pronostico-del-") == false){
     
     return (
@@ -106,11 +135,11 @@ export default function PronosticMatch({datas}){
                     <link rel="alternate" hrefLang="fr-fr" href={`https://winflix.net/football/pronostics-foot/pronostic-${datas.trads.fr.teamA}-${datas.trads.fr.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.fr.league}/`} />
                     <link rel="alternate" hrefLang="de-de" href={`https://winflix.net/de/fussball/vorhersagen/prognose-tipp-${datas.trads.de.teamA}-${datas.trads.de.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                     <link rel="alternate" hrefLang="it-it" href={`https://winflix.net/it/calcio/pronostico/pronostici-${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
-                    <link rel="alternate" hrefLang="en-en" href={`https://winflix.net/en/football/predictions/prediction-${data.homeTeam.team_url}-${data.awayTeam.team_url}-${data.date.replaceAll("/", "-")}-${data.league_name.replaceAll(" ", "-").toLowerCase()}/`} />
+                    <link rel="alternate" hrefLang="en-en" href={`https://winflix.net/en${router.asPath}`} />
                     <link rel="alternate" hrefLang="fr" href={`https://winflix.net/football/pronostics-foot/pronostic-${datas.trads.fr.teamA}-${datas.trads.fr.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.fr.league}/`} />
                     <link rel="alternate" hrefLang="de" href={`https://winflix.net/de/fussball/vorhersagen/prognose-tipp-${datas.trads.de.teamA}-${datas.trads.de.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                     <link rel="alternate" hrefLang="it" href={`https://winflix.net/it/calcio/pronostico/pronostici-${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
-                    <link rel="alternate" hrefLang="en" href={`https://winflix.net/en/football/predictions/prediction-${data.homeTeam.team_url}-${data.awayTeam.team_url}-${data.date.replaceAll("/", "-")}-${data.league_name.replaceAll(" ", "-").toLowerCase()}/`} />
+                    <link rel="alternate" hrefLang="en" href={`https://winflix.net/en${router.asPath}`} />
                 </Head>
                 
             ) : (
@@ -120,11 +149,11 @@ export default function PronosticMatch({datas}){
                     <link rel="alternate" hrefLang="fr-fr" href={`https://winflix.net/football/pronostics-foot/score-exact-${datas.trads.fr.teamA}-${datas.trads.fr.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.fr.league}/`} />
                     <link rel="alternate" hrefLang="de-de" href={`https://winflix.net/de/fussball/vorhersagen/genaues-ergebnis-${datas.trads.de.teamA}-${datas.trads.de.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                     <link rel="alternate" hrefLang="it-it" href={`https://winflix.net/it/calcio/pronostico/risultato-esatto-${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
-                    <link rel="alternate" hrefLang="en-en" href={`https://winflix.net/en/football/predictions/prediction-${data.homeTeam.team_url}-${data.awayTeam.team_url}-${data.date.replaceAll("/", "-")}-${data.league_name.replaceAll(" ", "-").toLowerCase()}/`} />
+                    <link rel="alternate" hrefLang="en-en" href={`https://winflix.net/en${router.asPath}`} />
                     <link rel="alternate" hrefLang="fr" href={`https://winflix.net/football/pronostics-foot/score-exact-${datas.trads.fr.teamA}-${datas.trads.fr.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.fr.league}/`} />
                     <link rel="alternate" hrefLang="de" href={`https://winflix.net/de/fussball/vorhersagen/genaues-ergebnis-${datas.trads.de.teamA}-${datas.trads.de.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                     <link rel="alternate" hrefLang="it" href={`https://winflix.net/it/calcio/pronostico/risultato-esatto-${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
-                    <link rel="alternate" hrefLang="en" href={`https://winflix.net/en/football/predictions/prediction-${data.homeTeam.team_url}-${data.awayTeam.team_url}-${data.date.replaceAll("/", "-")}-${data.league_name.replaceAll(" ", "-").toLowerCase()}/`} />
+                    <link rel="alternate" hrefLang="en" href={`https://winflix.net/en${router.asPath}`} />
                 </Head>
             )}
           
@@ -418,24 +447,30 @@ export default function PronosticMatch({datas}){
 
                     </div>
                     <div className="w35 wm100">
-                        <div className="app-content mBot30">
-                            <Link href={`/soccer-predictions/prediction-${data.homeTeam.team_url}`} passHref legacyBehavior>
-                                <a className="appBtnTeam mBot10">
-                                    <div className={`${styles.logoTeamT} mRight10`}>
-                                        <Image src={`https://winflix.net/logo/logo_${data.homeTeam.team_id}.png`} alt={`prediction ${data.homeTeam.team_name}`} layout="fill" />
-                                    </div>                                     
-                                    Predictions {data.homeTeam.team_name}
-                                </a>
-                            </Link>
-                            <Link href={`/soccer-predictions/prediction-${data.awayTeam.team_url}`} passHref legacyBehavior>
-                                <a className="appBtnTeam">
-                                    <div className={`${styles.logoTeamT} mRight10`}>
-                                        <Image src={`https://winflix.net/logo/logo_${data.awayTeam.team_id}.png`} alt={`prediction ${data.awayTeam.team_name}`} layout="fill" />
-                                    </div>                                     
-                                    Predictions {data.awayTeam.team_name}
-                                </a>
-                            </Link>
-                        </div>
+                        {(homeTeamStatus === 200 || awayTeamStatus === 200) && (
+                            <div className="app-content mBot30">
+                                {homeTeamStatus === 200 && (
+                                <Link href={`/soccer-predictions/prediction-${data.homeTeam.team_url}`} passHref legacyBehavior>
+                                    <a className="appBtnTeam mBot10">
+                                        <div className={`${styles.logoTeamT} mRight10`}>
+                                            <Image src={`https://winflix.net/logo/logo_${data.homeTeam.team_id}.png`} alt={`prediction ${data.homeTeam.team_name}`} layout="fill" />
+                                        </div>                                     
+                                        Predictions {data.homeTeam.team_name}
+                                    </a>
+                                </Link>
+                                )}
+                                {awayTeamStatus === 200 && (
+                                <Link href={`/soccer-predictions/prediction-${data.awayTeam.team_url}`} passHref legacyBehavior>
+                                    <a className="appBtnTeam">
+                                        <div className={`${styles.logoTeamT} mRight10`}>
+                                            <Image src={`https://winflix.net/logo/logo_${data.awayTeam.team_id}.png`} alt={`prediction ${data.awayTeam.team_name}`} layout="fill" />
+                                        </div>                                     
+                                        Predictions {data.awayTeam.team_name}
+                                    </a>
+                                </Link>
+                                )}
+                            </div>
+                        )}
                         <Others fixture_id={datas.fixture_id} league_id={data.league_id} league_name_fr={data.league_name_fr} />
                         <Sidebar />
                     </div>

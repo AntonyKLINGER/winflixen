@@ -1,13 +1,40 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/legacy/image'
 import styles from '../styles/StatusMatch.module.css'
 import Link from 'next/link'
 import { WINFLIX_URL } from '../config'
 import Router, { useRouter } from 'next/router'
+import axios from 'axios'
 
 export default function StatusMatch({datas, id}){
 
     const router = useRouter()
+
+    const [homeTeamStatus, setHomeTeamStatus] = useState(500);
+    const [awayTeamStatus, setAwayTeamStatus] = useState(500);
+  
+    useEffect(() => {
+      const checkStatus = async () => {
+        const homeTeamUrl = `https://winflix.net/en/soccer-predictions/prediction-${datas.homeTeam.team_url}`;
+        const awayTeamUrl = `https://winflix.net/en/soccer-predictions/prediction-${datas.awayTeam.team_url}`;
+  
+        try {
+          const homeTeamResponse = await axios.get(homeTeamUrl);
+          setHomeTeamStatus(homeTeamResponse.status);
+        } catch (error) {
+          setHomeTeamStatus(error.response.status);
+        }
+  
+        try {
+          const awayTeamResponse = await axios.get(awayTeamUrl);
+          setAwayTeamStatus(awayTeamResponse.status);
+        } catch (error) {
+          setAwayTeamStatus(error.response.status);
+        }
+      };
+  
+      checkStatus();
+    }, [datas.homeTeam.team_url, datas.awayTeam.team_url]);
 
     const [liveData, setLiveData] = React.useState({
         statusDisplay: <span className='material-icons sync'>sync</span>,
@@ -71,8 +98,8 @@ export default function StatusMatch({datas, id}){
 
     return (
         <div className={styles.appStatus}>
-            <div className="flex justicenter aligncenter">
-                <Link href={`/soccer-predictions/prediction-${datas.homeTeam.team_url}`} passHref className={styles.linkToTeam}>
+            <div className="flex justicenter aligncenter">           
+                <Link href={homeTeamStatus === 200 ? `/soccer-predictions/prediction-${datas.homeTeam.team_url}` : "/football/predictions"} passHref className={styles.linkToTeam}>
                 <div className={`${styles.appMetasTeam} text-center`}>
                     <div className={styles.appFlagTeam}>
                         <Image src={`https://winflix.net/logo/logo_${datas.homeTeam.team_id}.png`} alt={`logo team ${datas.homeTeam.team_name}`} layout="fill" />
@@ -88,7 +115,7 @@ export default function StatusMatch({datas, id}){
                         <span>{liveData.goalsAwayTeam}</span>
                     </span>
                 </div>
-                <Link href={`/soccer-predictions/prediction-${datas.awayTeam.team_url}`} passHref className={styles.linkToTeam}>
+                <Link href={awayTeamStatus === 200 ? `/soccer-predictions/prediction-${datas.awayTeam.team_url}` : "/football/predictions"} passHref className={styles.linkToTeam}>
                 <div className={`${styles.appMetasTeam} text-center`}>
                     <div className={styles.appFlagTeam}>
                         <Image src={`https://winflix.net/logo/logo_${datas.awayTeam.team_id}.png`} alt={`logo team ${datas.awayTeam.team_name}`} layout="fill" />

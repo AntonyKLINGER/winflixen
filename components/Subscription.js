@@ -36,10 +36,10 @@ export default function Subscription(){
     const [complete, setComplete] = useState(false)
     const [amountSub, setAmountSub] = useState("hebdo")
     const [description, setDescription] = useState("Abonnement hebdo VIP EN")
-    const [method, setMethod] = React.useState('paypal');
+    const [method, setMethod] = React.useState('');
     const [infos, setInfos] = useState({
-      name: "",
-      firstname: "",
+      lastName: "",
+      firstName: "",
       email: "",
       password: "",
       country: "US",
@@ -649,7 +649,7 @@ export default function Subscription(){
                       <div className={styles.Stripe}>
                         <span className={styles.method}><span className="material-icons">credit_card</span>Method of payment with PayPal</span>
                         <span className={styles.conditions}>Secure payment through PayPal operator. All your card details are safe.</span>
-                        {infos.firstName ? (
+                        {infos.email && infos.password && infos.lastName && infos.firstName && method ? (
                             <>
                                 <PayPalButton infos={infos} abo={amountSub} onComplete={setComplete} />
                             </>

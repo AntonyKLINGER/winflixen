@@ -1,5 +1,6 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import { UserContext } from '../../../UserContext'
+import Router, { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/legacy/image'
@@ -17,9 +18,11 @@ import CountdownTicket from '../../../components/CountdownTicket';
 import { VueMatch } from '../../../components/VueMatch'
 import Skeleton from '@mui/material/Skeleton'
 import Others from '../../../components/OtherMatchs'
+import axios from 'axios'
 
 export default function InfosMatch({datas}){
 
+    const router = useRouter()
     const data = datas.datas
     const title = `${data.homeTeam.team_name} ${data.awayTeam.team_name} live from ${data.date} 😎 → Result, Action, Live, Video, Result and Predictions`;
 
@@ -112,11 +115,11 @@ export default function InfosMatch({datas}){
                 <link rel="alternate" hrefLang="fr-fr" href={`https://winflix.net/football/match-en-direct/${datas.trads.fr.teamA}-${datas.trads.fr.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.fr.league}/`} />
                 <link rel="alternate" hrefLang="de-de" href={`https://winflix.net/de/fussball/live-heute/${datas.trads.de.teamA}-${datas.trads.de.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                 <link rel="alternate" hrefLang="it-it" href={`https://winflix.net/it/calcio/partite-live-diretta/${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
-                <link rel="alternate" hrefLang="en-en" href={`https://winflix.net/en/football/live-match/${data.homeTeam.team_url}-${data.awayTeam.team_url}-${data.date.replaceAll("/", "-")}-${data.league_name.replaceAll(" ", "-").toLowerCase()}/`} />
+                <link rel="alternate" hrefLang="en-en" href={`https://winflix.net/en${router.asPath}`} />
                 <link rel="alternate" hrefLang="fr" href={`https://winflix.net/football/match-en-direct/${datas.trads.fr.teamA}-${datas.trads.fr.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.fr.league}/`} />
                 <link rel="alternate" hrefLang="de" href={`https://winflix.net/de/fussball/live-heute/${datas.trads.de.teamA}-${datas.trads.de.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                 <link rel="alternate" hrefLang="it" href={`https://winflix.net/it/calcio/partite-live-diretta/${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
-                <link rel="alternate" hrefLang="en" href={`https://winflix.net/en/football/live-match/${data.homeTeam.team_url}-${data.awayTeam.team_url}-${data.date.replaceAll("/", "-")}-${data.league_name.replaceAll(" ", "-").toLowerCase()}/`} />
+                <link rel="alternate" hrefLang="en" href={`https://winflix.net/en${router.asPath}`} />
             </Head>
 
             <ol itemScope itemType="http://schema.org/BreadcrumbList" style={{display: "none"}}>
