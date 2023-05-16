@@ -77,12 +77,12 @@
 
 .cOddsMin {
     font-size: 12px;
-    margin-top: 5px;
+    margin-top: 2px;
     font-weight: 700;
 }
 
 .appMediaSeo {
-    height: 300px;
+    height: 450px;
     position: relative;
     border-radius: 18px;
     overflow:hidden;
@@ -90,7 +90,7 @@
 
 .appMediaSeo img{
     object-fit:cover;
-    filter:grayscale(100%)
+    /* filter:grayscale(100%) */
 }
 
 .logoTeamT{
@@ -120,6 +120,117 @@
   border-radius:5px;
 }
 
+.gamebox h3{
+    font-size:16px;
+}
+
+.gamebox{
+    border: 2px solid rgba(0, 0, 0, 0.07);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.forme{
+    font-size:30px;
+    font-weight:800;
+    display:block;
+    text-align:center;
+}
+
+.formeLabel{
+    font-size:10px;
+    margin-left:5px;
+    display:block;
+    text-align:center;
+    text-transform:uppercase;
+}
+
+.graph{
+    overflow:hidden;
+    gap:2px;
+}
+
+.rounder{
+    width: 25px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.formeNumber{
+    display:block;
+    font-weight:700;
+    font-size:16px;
+    line-height:1em;
+}
+
+.formeType{
+    font-size:10px;
+    line-height:1em;
+    text-transform:uppercase;
+}
+
+.avantage{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    background: #FFF;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 2px dashed rgba(0,0,0,0.07);
+}
+
+.adv{
+    width:25px;
+    height:25px;
+    position:relative;
+}
+
+.adv img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+}
+
+.avantager{
+    color:green;
+}
+
+.slash{
+    font-size:20px;
+}
+
+.teamS{
+    font-weight:700;
+    font-size:16px;
+}
+
+.resume{
+    border:.8px solid rgba(0,0,0,0.07);
+    margin-top:20px;
+    position:relative;
+}
+
+.resume::after{
+    content:'Resume';
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-size:12px;
+    background:#FFF;
+    padding:0 10px;
+    color:#AAA;
+}
+
+.pot{
+    width:40%;
+}
+
 @media(max-width:810px){
     .cPerc{
         margin-right:0px !important;
@@ -129,7 +240,7 @@
         position: absolute;
         right: 0;
         top: 0;
-        background: #f5f5f5;
+        background: #fff;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -146,4 +257,26 @@
     .breadcrump{
         padding: 0 25px;
     }
+
+    .appMediaSeo{
+        height:250px;
+    }
+
+    .avantage{
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        line-height:1.5em;
+    }
+
+    .adv{
+        width:30px;
+        height:30px;
+    }
+
+    .avantager{
+        display:block;
+    }
+
 }

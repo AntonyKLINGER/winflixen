@@ -39,6 +39,62 @@ export default function FormeStats({datas}){
     const [loadA, setLoadA] = React.useState(false)
     const [lastB, setLastB] = React.useState(null)
     const [loadB, setLoadB] = React.useState(false)
+
+    const organisationData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://winflix.net/en/",
+        "name": "Winflix",
+        "logo": "https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75",
+        "sameAs": [
+            "https://www.facebook.com/winflixfootball/",
+            "https://twitter.com/winflix1/",
+            "https://www.instagram.com/winflix_officiel/"
+        ]
+    }
+
+    const articleData = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": `Winflix : Football Videos and Resume ${data.homeTeam.team_name} ${data.homeTeam.away_name} ${data.homeTeam.team_name} ${data.date} in ${data.league_name_fr}`,
+        "image": "https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75",
+        "author": "Winflix",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Winflix",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75"
+            }
+        },
+        "datePublished": `${data.event_date}`,
+        "description": `Football Videos and Resume about ${data.homeTeam.team_name} ${data.awayTeam.team_name} from ${data.date} in ${data.league_name_fr}.`
+    }
+
+    const speakableData = {
+        "@context": "https://schema.org",
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/head/title",
+          "/html/head/meta[@name='description']/@content"
+        ]
+    }
+    
+    const eventData = {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": `Football Videos and Resume ${data.homeTeam.team_name} vs ${data.awayTeam.team_name} from ${data.date} in ${data.league_name_fr}`,
+        "startDate": `${data.event_date}`,
+        "location": {
+          "@type": "Place",
+          "name": `${data.venue}`,
+          "address": `${data.country}`
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Winflix"
+        }
+    }
     
     return (
         <div className="appInfos">
@@ -53,6 +109,22 @@ export default function FormeStats({datas}){
                 <link rel="alternate" hrefLang="de" href={`https://winflix.net/de/fussball/fussball-highlights/tore-video-${data.homeTeam.team_url}-${data.awayTeam.team_url}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                 <link rel="alternate" hrefLang="it" href={`https://winflix.net/it/calcio/diretta-gol/gol-${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
                 <link rel="alternate" hrefLang="en-en" href={`https://winflix.net/en${router.asPath}`} />
+                <script
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationData) }}
+                />
+                <script
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleData) }}
+                />
+                <script
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableData) }}
+                />
+                <script
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(eventData) }}
+                />  
             </Head>
             <ol itemScope itemType="http://schema.org/BreadcrumbList" style={{display: "none"}}>
               <li itemProp="itemListElement" itemScope

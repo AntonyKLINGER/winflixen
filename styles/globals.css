@@ -1549,12 +1549,76 @@ p a{
   margin-right:6px;
 }
 
-.MuiFormControlLabel-labelPlacementEnd{
-  margin:0px !important;
+.tomore{
+  display:none;
 }
 
-.css-ahj2mt-MuiTypography-root{
-  font-size:15px;
+.lister{
+  margin:0;
+  padding:0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #a4a4aa;
+  line-height: 1.5em;
+  margin-bottom:20px;
+}
+
+.lister li{
+  margin:10px 0;
+}
+
+.lister li a{
+  color:#000;
+}
+
+.toreadmore{
+  color:#000 !important;
+  text-decoration:underline;
+  font-weight:600;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.tab_s{
+  width:50%;
+  height:40px;
+  background:transparent;
+  border:0px;
+  font-weight: 600;
+  font-size:14px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:.3s ease;
+  z-index:2;
+}
+
+.tab_sactive{
+  color:#FFF;
+}
+
+.switcher{
+  padding:10px;
+  background:#FFF;
+  border-radius:18px;
+  position:relative;
+}
+
+.switcher::before{
+  content:'';
+  position:absolute;
+  left:10px;
+  top:50%;
+  transform:translateY(-50%);
+  width:48.8%;
+  height:40px;
+  background:red;
+  z-index:1;
+  border-radius:10px;
+  transition:.4s ease;
+}
+
+.switcher.glee::before{
+  transform:translateY(-50%) translateX(100%);
 }
 
 @media(max-width:810px){
@@ -1722,6 +1786,34 @@ p a{
   .app-btn-open{
     bottom:80px;
   }
+
+  .switcher::before{
+    width: 47.6%;
+  }
+}
+
+.gap20{
+  gap:20px;
+}
+
+.dblock{
+  display:block;
+}
+
+.dnone{
+  display:none;
+}
+
+.formestats .bgreen{
+  background-color:green;
+}
+
+.formestats .bgred{
+  background-color:red;
+}
+
+.formestats .bgray{
+  background-color:#DDD;
 }
 
 #nprogress {

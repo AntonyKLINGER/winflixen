@@ -123,6 +123,63 @@ export default function PronosticMatch({datas}){
       checkStatus();
     }, [data.homeTeam.team_url, data.awayTeam.team_url]);
 
+
+    const organisationData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://winflix.net/en/",
+        "name": "Winflix",
+        "logo": "https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75",
+        "sameAs": [
+            "https://www.facebook.com/winflixfootball/",
+            "https://twitter.com/winflix1/",
+            "https://www.instagram.com/winflix_officiel/"
+        ]
+    }
+
+    const articleData = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": `Winflix : Football prediction ${data.homeTeam.team_name} ${data.homeTeam.away_name} ${data.homeTeam.team_name} ${data.date} in ${data.league_name_fr}`,
+        "image": "https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75",
+        "author": "Winflix",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Winflix",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75"
+            }
+        },
+        "datePublished": `${data.event_date}`,
+        "description": `All football prediction about ${data.homeTeam.team_name} ${data.awayTeam.team_name} from ${data.date} in ${data.league_name_fr}.`
+    }
+
+    const speakableData = {
+        "@context": "https://schema.org",
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/head/title",
+          "/html/head/meta[@name='description']/@content"
+        ]
+    }
+    
+    const eventData = {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": `Football pediction ${data.homeTeam.team_name} vs ${data.awayTeam.team_name} from ${data.date} in ${data.league_name_fr}`,
+        "startDate": `${data.event_date}`,
+        "location": {
+          "@type": "Place",
+          "name": `${data.venue}`,
+          "address": `${data.country}`
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Winflix"
+        }
+    }
+
     if(path.includes("pronostico-del-") == false){
     
     return (
@@ -140,6 +197,22 @@ export default function PronosticMatch({datas}){
                     <link rel="alternate" hrefLang="de" href={`https://winflix.net/de/fussball/vorhersagen/prognose-tipp-${datas.trads.de.teamA}-${datas.trads.de.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                     <link rel="alternate" hrefLang="it" href={`https://winflix.net/it/calcio/pronostico/pronostici-${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
                     <link rel="alternate" hrefLang="en" href={`https://winflix.net/en${router.asPath}`} />
+                    <script
+                    type='application/ld+json'
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationData) }}
+                    />
+                    <script
+                    type='application/ld+json'
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(articleData) }}
+                    />
+                    <script
+                    type='application/ld+json'
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableData) }}
+                    />
+                    <script
+                    type='application/ld+json'
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(eventData) }}
+                    />  
                 </Head>
                 
             ) : (
@@ -154,6 +227,22 @@ export default function PronosticMatch({datas}){
                     <link rel="alternate" hrefLang="de" href={`https://winflix.net/de/fussball/vorhersagen/genaues-ergebnis-${datas.trads.de.teamA}-${datas.trads.de.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                     <link rel="alternate" hrefLang="it" href={`https://winflix.net/it/calcio/pronostico/risultato-esatto-${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
                     <link rel="alternate" hrefLang="en" href={`https://winflix.net/en${router.asPath}`} />
+                    <script
+                    type='application/ld+json'
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationData) }}
+                    />
+                    <script
+                    type='application/ld+json'
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(articleData) }}
+                    />
+                    <script
+                    type='application/ld+json'
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableData) }}
+                    />
+                    <script
+                    type='application/ld+json'
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(eventData) }}
+                    />  
                 </Head>
             )}
           
@@ -289,61 +378,219 @@ export default function PronosticMatch({datas}){
                                     <Option type={`${data.homeTeam.team_name} or draw and -3,5 goals`} odd={load ? odds.odds_1N35 : ""} prono="1N35" id={datas.fixture_id} />
                                     <Option type={`${data.awayTeam.team_name} or draw and -3,5 goals`} odd={load ? odds.odds_N235 : ""} prono="N235" id={datas.fixture_id} />
                                 </div>
-                            </div>
-                            {sub.status != 'active' && (
-                            <div className="mBot30">
-                                <OutilsCTA />
-                            </div>   
-                            )}                            
+                            </div>                     
                             <div className="app-content mTop30 mBot30">
-                                <div className="flex toColumn">
-                                    <div className="w70 mRight30 mRnone wm100 mmBot20">
-                                        <p>Are you looking for the best prediction for the opponents soccer match {data.homeTeam.team_name} - {data.awayTeam.team_name} ? <strong>Here are the 3 important criteria you should know:</strong></p>
-                                        <p>The form of teams / Attractiveness of offensive potential / Form of defense of teams / Placement in league or stakes / Injured or absent players in the team / Results of the last matches of {data.homeTeam.team_name} e {data.awayTeam.team_name}.</p>
-                                        <h2>Bet on 1 X 2: Which prediction {data.homeTeam.team_name} vs. {data.awayTeam.team_name} ?</h2>
-                                        <p>You are looking for a reliable prediction to know who will win the game of {data.date}, taking into account the form of each team.</p>
+                                <div className={`w100 wm100 ${styles.appMediaSeo}`}>
+                                    <Image src={`${WINFLIX_URL}/image_cover.php?teamA=${data.homeTeam.team_id}&teamB=${data.awayTeam.team_id}&nameA=${data.homeTeam.team_name}&nameB=${data.awayTeam.team_name}`} layout="fill" alt="photo de couverture" />
+                                </div>
+                                <div className="w100 mRnone wm100 mmBot20">
+                                    <p>Are you looking for the best prediction for the opponents soccer match {data.homeTeam.team_name} - {data.awayTeam.team_name} ? <strong>Here are the 3 important criteria you should know:</strong></p>
+                                    <p>The form of teams / Attractiveness of offensive potential / Form of defense of teams / Placement in league or stakes / Injured or absent players in the team / Results of the last matches of {data.homeTeam.team_name} e {data.awayTeam.team_name}.</p>
+                                    <h2>Bet on 1 X 2: Which prediction {data.homeTeam.team_name} vs. {data.awayTeam.team_name} ?</h2>
+                                    <p>You are looking for a reliable prediction to know who will win the game of {data.date}, taking into account the form of each team.</p>
+                                </div>
+                                <div className="flex gap20 toColumn">
+                                    <div className={`w50 wm100 ${styles.gamebox} text-center`}>
+                                        <h3 className="app-title-h2 flex aligncenter justicenter">
+                                        <div className={`${styles.logoTeamT} mRight10`}>
+                                            <Image src={`https://winflix.net/logo/logo_${data.homeTeam.team_id}.png`} layout="fill" alt={`logo ${data.homeTeam.team_name}`} />
+                                        </div>                                
+                                        Team form status {data.homeTeam.team_name}
+                                     </h3>
+                                     <div className="mTop10">
+                                        <div>
+                                            <span className={styles.forme}>
+                                                {(loadA && lastA.general != null) && (
+                                                    <>
+                                                        {(lastA.general[0].stats[0].victoires*20)+(lastA.general[0].stats[0].nuls*10)}
+                                                    </>
+                                                )}    
+                                            %</span>
+                                            <span className={styles.formeLabel}>Team form</span>
+                                        </div>
+                                        <div className={`flex aligncenter justicenter mTop10 formestats ${styles.graph}`}>
+                                            {(loadA && lastA.general != null) && lastA.general[0].matchs.map((match, index) => {
+                                                return <span key={index} className={`${styles.rounder} ${match.result}`}></span>
+                                            })}
+                                        </div>
+                                     </div>
+                                     <p>{data.homeTeam.team_name} :  In the last 5 games, the team {(loadA && lastA.general != null) && lastA.general[0].stats[0].victoires} wins, {(loadA && lastA.general != null) && lastA.general[0].stats[0].nuls} draws {(loadA && lastA.general != null) && lastA.general[0].stats[0].defaites} loss. If you are looking for a prediction for this game, you must take into account that the team {data.homeTeam.team_name} has rated a form at {(loadA && lastA.general != null) && (lastA.general[0].stats[0].victoires*20)+(lastA.general[0].stats[0].nuls*10)}%.</p>
                                     </div>
-                                    <div className={`w30 wm100 ${styles.appMediaSeo}`}>
-                                        <Image src={`${WINFLIX_URL}/image_cover.php?teamA=${data.homeTeam.team_id}&teamB=${data.awayTeam.team_id}&nameA=${data.homeTeam.team_name}&nameB=${data.awayTeam.team_name}`} layout="fill" alt="photo de couverture" />
+                                    <div className={`w50 wm100 ${styles.gamebox} text-center`}>
+                                        <h3 className="app-title-h2 flex aligncenter justicenter">
+                                        <div className={`${styles.logoTeamT} mRight10`}>
+                                            <Image src={`https://winflix.net/logo/logo_${data.awayTeam.team_id}.png`} layout="fill" alt={`logo ${data.awayTeam.team_name}`} />
+                                        </div>                                
+                                        Team form status {data.awayTeam.team_name}
+                                        </h3>
+                                        <div className="mTop10">
+                                            <div>
+                                                <span className={styles.forme}>
+                                                {(loadB && lastB.general != null) && (
+                                                    <>
+                                                        {(lastB.general[0].stats[0].victoires*20)+(lastB.general[0].stats[0].nuls*10)}
+                                                    </>
+                                                )}    
+                                                %</span>
+                                                <span className={styles.formeLabel}>Team form</span>
+                                            </div>
+                                            <div className={`flex aligncenter justicenter mTop10 formestats ${styles.graph}`}>
+                                                {(loadB && lastB.general != null) && lastB.general[0].matchs.map((match, index) => {
+                                                    return <span key={index} className={`${styles.rounder} ${match.result}`}></span>
+                                                })}
+                                            </div>
+                                        </div>
+                                        <p>{data.awayTeam.team_name} :  In the last 5 games, the team {(loadB && lastB.general != null) && lastB.general[0].stats[0].victoires} wins, {(loadB && lastB.general != null) && lastB.general[0].stats[0].nuls} draws {(loadB && lastB.general != null) && lastB.general[0].stats[0].defaites} loss. If you are looking for a prediction for this game, you must take into account that the team {data.awayTeam.team_name} has rated a form at {(loadB && lastB.general != null) && (lastB.general[0].stats[0].victoires*20)+(lastB.general[0].stats[0].nuls*10)}%.</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="app-content mBot30" id="analysis">
-                                <h3 className="app-title-h2 flex aligncenter">
-                                    <div className={`${styles.logoTeamT} mRight10`}>
-                                        <Image src={`https://winflix.net/logo/logo_${data.homeTeam.team_id}.png`} layout="fill" alt={`logo ${data.homeTeam.team_name}`} />
-                                    </div>                                
-                                    Form of {data.homeTeam.team_name}
-                                </h3>
-                                <p>{data.homeTeam.team_name} :  In the last 5 games, the team {(loadA && lastA.general != null) && lastA.general[0].stats[0].victoires} wins, {(loadA && lastA.general != null) && lastA.general[0].stats[0].nuls} draws {(loadA && lastA.general != null) && lastA.general[0].stats[0].defaites} loss. If you are looking for a prediction for this game, you must take into account that the team {data.homeTeam.team_name} has rated a form at {(loadA && lastA.general != null) && (lastA.general[0].stats[0].victoires*20)+(lastA.general[0].stats[0].victoires*5)}%.</p>
-                                <h3 className="app-title-h2 flex aligncenter">
-                                    <div className={`${styles.logoTeamT} mRight10`}>
-                                        <Image src={`https://winflix.net/logo/logo_${data.awayTeam.team_id}.png`} layout="fill" alt={`logo ${data.awayTeam.team_name}`} />
-                                    </div>                                
-                                    Form of {data.awayTeam.team_name}
-                                </h3>
-                                <p>{data.awayTeam.team_name} :  In the last 5 games, the team {(loadB && lastB.general != null) && lastB.general[0].stats[0].victoires} wins, {(loadB && lastB.general != null) && lastB.general[0].stats[0].nuls} draws {(loadB && lastB.general != null) && lastB.general[0].stats[0].defaites} loss. If you are looking for a prediction for this game, you must take into account that the team {data.awayTeam.team_name} has rated a form at {(loadB && lastB.general != null) && (lastB.general[0].stats[0].victoires*20)+(lastB.general[0].stats[0].victoires*5)}%.</p>
+                                {(loadA && lastA.general != null && loadB && lastB.general != null) && (
+                                    (lastA.general[0].stats[0].victoires*20)+(lastA.general[0].stats[0].nuls*10) >= (lastB.general[0].stats[0].victoires*20)+(lastB.general[0].stats[0].nuls*10) ? (
+                                        <div className={styles.avantage}>
+                                            <div className={styles.adv}>
+                                                <Image src={`https://wp.winflix.net/wp-content/uploads/2023/05/football.png`} layout="fill" />
+                                            </div>
+                                            <span>Based on the teams' forms : <span className={styles.avantager}>Advantage for {data.homeTeam.team_name}</span></span>
+                                        </div>
+                                    ) : (
+                                        <div className={styles.avantage}>
+                                            <div className={styles.adv}>
+                                                <Image src={`https://wp.winflix.net/wp-content/uploads/2023/05/football.png`} layout="fill" />
+                                            </div>
+                                            <span>Based on the teams' forms : <span className={styles.avantager}>Advantage for {data.awayTeam.team_name}</span></span>
+                                        </div>
+                                    )
+                                )}
                             </div>
                             <div className="app-content mBot30">
-                                <h2>Predicted number of goals in the game: <br/> {data.homeTeam.team_name} vs. {data.awayTeam.team_name}</h2>
+                                <h2>Predicted number of goals in the game {data.homeTeam.team_name} vs {data.awayTeam.team_name}</h2>
                                 <p>Again we look at how many goals each team, {data.homeTeam.team_name} or {data.awayTeam.team_name}, scored in the last 5 games they played. A football prediction about the number of goals in the game or about the number of goals in this game {data.homeTeam.team_name} or {data.awayTeam.team_name} will score must take this criterion into account :</p>
                                 <h3 className="app-title-h2 flex aligncenter">
                                     <span className="material-icons mRight8" data-icon="add_circle_outline"></span>
                                     Goals scored
                                 </h3>
-                                <p><strong>Prediction of the number of goals scored by {data.homeTeam.team_name}</strong><br />{data.homeTeam.team_name} scored {(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_marques} in these last 5 games, i.e. an average of {(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_in} goals per game. Its offensive potential in attack is {loadA && ((lastA.general[0].stats[0].buts_marques*10)/1.4).toFixed(0)}%.</p>
-                                <p><strong>Prediction of the number of goals scored by {data.awayTeam.team_name}</strong><br />{data.awayTeam.team_name} scored {(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_marques} in these last 5 games, i.e. an average of {(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_in} goals per game. Its offensive potential in attack is {(loadB && lastB.general != null) && ((lastB.general[0].stats[0].buts_marques*10)/1.4).toFixed(0)}%.</p>
+                                <div className="flex gap20 toColumn mTop20 mBot20">
+                                    <div className={`w50 wm100 ${styles.gamebox} text-center`}>
+                                        <h3 className="app-title-h2 flex aligncenter justicenter">
+                                        <div className={`${styles.logoTeamT} mRight10`}>
+                                            <Image src={`https://winflix.net/logo/logo_${data.homeTeam.team_id}.png`} layout="fill" alt={`logo ${data.homeTeam.team_name}`} />
+                                        </div>                                
+                                        {data.homeTeam.team_name}
+                                     </h3>
+                                     <div className="mTop10">
+                                        <div>
+                                            <span className={styles.forme}>
+                                                {(loadA && lastA.general != null) && (
+                                                    <>
+                                                        {((lastA.general[0].stats[0].buts_marques*10)/1.4).toFixed(0)}
+                                                    </>
+                                                )}    
+                                            %</span>
+                                            <span className={styles.formeLabel}>Offensive potential</span>
+                                        </div>
+                                        <div className={`flex aligncenter justicenter mTop10 formestats ${styles.graph}`}>
+                                            {(loadA && lastA.general != null) && lastA.general[0].matchs.map((match, index) => {
+                                                return <span key={index} className={`${styles.rounder} ${match.result}`}></span>
+                                            })}
+                                        </div>
+                                     </div>
+                                     <p><strong>Prediction number of goals scored {data.homeTeam.team_name}</strong><br />{data.homeTeam.team_name} scored {(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_marques} in these last 5 games, i.e. an average of {(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_in} goals per game. Its offensive potential in attack is {loadA && ((lastA.general[0].stats[0].buts_marques*10)/1.4).toFixed(0)}%.</p>
+                                    </div>
+                                    <div className={`w50 wm100 ${styles.gamebox} text-center`}>
+                                        <h3 className="app-title-h2 flex aligncenter justicenter">
+                                        <div className={`${styles.logoTeamT} mRight10`}>
+                                            <Image src={`https://winflix.net/logo/logo_${data.awayTeam.team_id}.png`} layout="fill" alt={`logo ${data.awayTeam.team_name}`} />
+                                        </div>                                
+                                        {data.awayTeam.team_name}
+                                        </h3>
+                                        <div className="mTop10">
+                                            <div>
+                                                <span className={styles.forme}>
+                                                {(loadB && lastB.general != null) && (
+                                                    <>
+                                                        {((lastB.general[0].stats[0].buts_marques*10)/1.4).toFixed(0)}
+                                                    </>
+                                                )}    
+                                                %</span>
+                                                <span className={styles.formeLabel}>Offensive potential</span>
+                                            </div>
+                                            <div className={`flex aligncenter justicenter mTop10 formestats ${styles.graph}`}>
+                                                {(loadB && lastB.general != null) && lastB.general[0].matchs.map((match, index) => {
+                                                    return <span key={index} className={`${styles.rounder} ${match.result}`}></span>
+                                                })}
+                                            </div>
+                                        </div>
+                                        <p><strong>Prediction number of goals scored {data.awayTeam.team_name}</strong><br />{data.awayTeam.team_name} scored {(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_marques} in these last 5 games, i.e. an average of {(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_in} goals per game. Its offensive potential in attack is {(loadB && lastB.general != null) && ((lastB.general[0].stats[0].buts_marques*10)/1.4).toFixed(0)}%.</p>
+                                    </div>
+                                </div>
                                 <h3 className="app-title-h2 flex aligncenter">
                                     <span className="material-icons mRight8" data-icon="remove_circle_outline"></span>
                                     Goals conceded
                                 </h3>
-                                <p><strong>Prediction of number of goals conceded by {data.homeTeam.team_name}</strong><br />{data.homeTeam.team_name} redeemed {(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_encaisses} in these last 5 games, i.e. an average of {(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_out} goals per game. Its defense potential is {loadA && (100-(lastA.general[0].stats[0].buts_encaisses*10)/1.4).toFixed(0)}%.</p>
-                                <p><strong>Prediction of number of goals conceded by {data.awayTeam.team_name}</strong><br />{data.awayTeam.team_name} redeemed {(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_encaisses} in these last 5 games, i.e. an average of {(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_out} goals per game. Its defense potential is {(loadB && lastB.general != null) && (100-(lastB.general[0].stats[0].buts_encaisses*10)/1.4).toFixed(0)}%.</p>
+                                <div className="flex gap20 toColumn mTop20 mBot20">
+                                    <div className={`w50 wm100 ${styles.gamebox} text-center`}>
+                                        <h3 className="app-title-h2 flex aligncenter justicenter">
+                                        <div className={`${styles.logoTeamT} mRight10`}>
+                                            <Image src={`https://winflix.net/logo/logo_${data.homeTeam.team_id}.png`} layout="fill" alt={`logo ${data.homeTeam.team_name}`} />
+                                        </div>                                
+                                        {data.homeTeam.team_name}
+                                     </h3>
+                                     <div className="mTop10">
+                                        <div>
+                                            <span className={styles.forme}>
+                                                {(loadA && lastA.general != null) && (
+                                                    <>
+                                                        {(100-(lastA.general[0].stats[0].buts_encaisses*10)/1.4).toFixed(0)}
+                                                    </>
+                                                )}    
+                                            %</span>
+                                            <span className={styles.formeLabel}>Defensive potential</span>
+                                        </div>
+                                        <div className={`flex aligncenter justicenter mTop10 formestats ${styles.graph}`}>
+                                            {(loadA && lastA.general != null) && lastA.general[0].matchs.map((match, index) => {
+                                                return <span key={index} className={`${styles.rounder} ${match.result}`}></span>
+                                            })}
+                                        </div>
+                                     </div>
+                                     <p><strong>Prediction number of goals conceded {data.homeTeam.team_name}</strong><br />{data.homeTeam.team_name} redeemed {(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_encaisses} in these last 5 games, i.e. an average of {(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_out} goals per game. Its defense potential is {loadA && (100-(lastA.general[0].stats[0].buts_encaisses*10)/1.4).toFixed(0)}%.</p>
+                                    </div>
+                                    <div className={`w50 wm100 ${styles.gamebox} text-center`}>
+                                        <h3 className="app-title-h2 flex aligncenter justicenter">
+                                        <div className={`${styles.logoTeamT} mRight10`}>
+                                            <Image src={`https://winflix.net/logo/logo_${data.awayTeam.team_id}.png`} layout="fill" alt={`logo ${data.awayTeam.team_name}`} />
+                                        </div>                                
+                                        {data.awayTeam.team_name}
+                                        </h3>
+                                        <div className="mTop10">
+                                            <div>
+                                                <span className={styles.forme}>
+                                                {(loadB && lastB.general != null) && (
+                                                    <>
+                                                        {(100-(lastB.general[0].stats[0].buts_encaisses*10)/1.4).toFixed(0)}
+                                                    </>
+                                                )}    
+                                                %</span>
+                                                <span className={styles.formeLabel}>Defensive potential</span>
+                                            </div>
+                                            <div className={`flex aligncenter justicenter mTop10 formestats ${styles.graph}`}>
+                                                {(loadB && lastB.general != null) && lastB.general[0].matchs.map((match, index) => {
+                                                    return <span key={index} className={`${styles.rounder} ${match.result}`}></span>
+                                                })}
+                                            </div>
+                                        </div>
+                                        <p><strong>Prediction number of goals conceded {data.awayTeam.team_name}</strong><br />{data.awayTeam.team_name} redeemed {(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_encaisses} in these last 5 games, i.e. an average of {(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_out} goals per game. Its defense potential is {(loadB && lastB.general != null) && (100-(lastB.general[0].stats[0].buts_encaisses*10)/1.4).toFixed(0)}%.</p>
+                                    </div>
+                                </div>
                                 <h3 className="app-title-h2 flex aligncenter">
                                     <span className="material-icons mRight8" data-icon="tips_and_updates"></span>
                                     Conclusion: what a prognosis for the number of goals ?
                                 </h3>
                                 <p>From purely mathematical prediction face based on the results of the last 5 football games played {data.homeTeam.team_name} and {data.awayTeam.team_name} we should have total {((loadA && lastA.general != null) && loadB) && ((lastA.general[0].stats[0].buts_in+lastB.general[0].stats[0].buts_out)/2 + (lastB.general[0].stats[0].buts_in+lastA.general[0].stats[0].buts_out)/2).toFixed(1)} in this game.</p>
+                                <div className={styles.avantage}>
+                                    <div className={styles.adv}>
+                                        <Image src={`https://wp.winflix.net/wp-content/uploads/2023/05/goal.png`} layout="fill" />
+                                    </div>
+                                    <span>Total goals based on statistics : <span className={styles.avantager}>{((loadA && lastA.general != null) && loadB) && ((lastA.general[0].stats[0].buts_in+lastB.general[0].stats[0].buts_out)/2 + (lastB.general[0].stats[0].buts_in+lastA.general[0].stats[0].buts_out)/2).toFixed(1)} goals in the game.</span></span>
+                                </div>
                             </div>
                             </>
                             ) : (

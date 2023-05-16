@@ -151,3 +151,38 @@
     }
     
 }
+
+.logoH2H{
+    width:30px;
+    height:100%;
+    position:relative;
+    display:inline-block;
+}
+
+.logoH2H span{
+    position:relative !important;
+}
+
+.logoH2H img{
+    position:relative !important;
+    width: 30px !important;
+    height: auto !important;
+}
+
+.appH2Hnumber{
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.appH2Htype{
+    display: block;
+    font-size: 12px;
+    color: #888;
+}
+
+@media(max-width:810px){
+    .breadcrump{
+        padding: 0 25px;
+    }                            
+}
