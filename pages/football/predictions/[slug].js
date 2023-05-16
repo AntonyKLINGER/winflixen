@@ -476,23 +476,18 @@ export default function PronosticMatch({datas}){
                                         </div>                                
                                         {data.homeTeam.team_name}
                                      </h3>
-                                     <div className="mTop10">
-                                        <div>
-                                            <span className={styles.forme}>
-                                                {(loadA && lastA.general != null) && (
-                                                    <>
-                                                        {((lastA.general[0].stats[0].buts_marques*10)/1.4).toFixed(0)}
-                                                    </>
-                                                )}    
-                                            %</span>
+                                     <div className="flex justicenter aligncenter gap20">
+                                        <div className={styles.pot}>
+                                            <span className={styles.forme}>{(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_in}</span>
+                                            <span className={styles.formeLabel}>goals per game</span>
+                                        </div>
+                                        <span className={styles.slash}>⚡</span>
+                                        <div className={styles.pot}>
+                                            <span className={styles.forme}>{loadA && ((lastA.general[0].stats[0].buts_marques*10)/1.4).toFixed(0)}%</span>
                                             <span className={styles.formeLabel}>Offensive potential</span>
                                         </div>
-                                        <div className={`flex aligncenter justicenter mTop10 formestats ${styles.graph}`}>
-                                            {(loadA && lastA.general != null) && lastA.general[0].matchs.map((match, index) => {
-                                                return <span key={index} className={`${styles.rounder} ${match.result}`}></span>
-                                            })}
-                                        </div>
-                                     </div>
+                                    </div>
+                                    <div className={styles.resume}></div>
                                      <p><strong>Prediction number of goals scored {data.homeTeam.team_name}</strong><br />{data.homeTeam.team_name} scored {(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_marques} in these last 5 games, i.e. an average of {(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_in} goals per game. Its offensive potential in attack is {loadA && ((lastA.general[0].stats[0].buts_marques*10)/1.4).toFixed(0)}%.</p>
                                     </div>
                                     <div className={`w50 wm100 ${styles.gamebox} text-center`}>
@@ -502,23 +497,18 @@ export default function PronosticMatch({datas}){
                                         </div>                                
                                         {data.awayTeam.team_name}
                                         </h3>
-                                        <div className="mTop10">
-                                            <div>
-                                                <span className={styles.forme}>
-                                                {(loadB && lastB.general != null) && (
-                                                    <>
-                                                        {((lastB.general[0].stats[0].buts_marques*10)/1.4).toFixed(0)}
-                                                    </>
-                                                )}    
-                                                %</span>
+                                        <div className="flex justicenter aligncenter gap20">
+                                            <div className={styles.pot}>
+                                                <span className={styles.forme}>{(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_in}</span>
+                                                <span className={styles.formeLabel}>goals per game</span>
+                                            </div>
+                                            <span className={styles.slash}>⚡</span>
+                                            <div className={styles.pot}>
+                                                <span className={styles.forme}>{loadB && ((lastB.general[0].stats[0].buts_marques*10)/1.4).toFixed(0)}%</span>
                                                 <span className={styles.formeLabel}>Offensive potential</span>
                                             </div>
-                                            <div className={`flex aligncenter justicenter mTop10 formestats ${styles.graph}`}>
-                                                {(loadB && lastB.general != null) && lastB.general[0].matchs.map((match, index) => {
-                                                    return <span key={index} className={`${styles.rounder} ${match.result}`}></span>
-                                                })}
-                                            </div>
                                         </div>
+                                        <div className={styles.resume}></div>
                                         <p><strong>Prediction number of goals scored {data.awayTeam.team_name}</strong><br />{data.awayTeam.team_name} scored {(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_marques} in these last 5 games, i.e. an average of {(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_in} goals per game. Its offensive potential in attack is {(loadB && lastB.general != null) && ((lastB.general[0].stats[0].buts_marques*10)/1.4).toFixed(0)}%.</p>
                                     </div>
                                 </div>
@@ -534,23 +524,18 @@ export default function PronosticMatch({datas}){
                                         </div>                                
                                         {data.homeTeam.team_name}
                                      </h3>
-                                     <div className="mTop10">
-                                        <div>
-                                            <span className={styles.forme}>
-                                                {(loadA && lastA.general != null) && (
-                                                    <>
-                                                        {(100-(lastA.general[0].stats[0].buts_encaisses*10)/1.4).toFixed(0)}
-                                                    </>
-                                                )}    
-                                            %</span>
+                                     <div className="flex justicenter aligncenter gap20">
+                                        <div className={styles.pot}>
+                                            <span className={styles.forme}>{(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_out}</span>
+                                            <span className={styles.formeLabel}>goals per game</span>
+                                        </div>
+                                        <span className={styles.slash}>⚡</span>
+                                        <div className={styles.pot}>
+                                            <span className={styles.forme}>{loadA && ((100-(lastA.general[0].stats[0].buts_encaisses*10)/1.4).toFixed(0))}%</span>
                                             <span className={styles.formeLabel}>Defensive potential</span>
                                         </div>
-                                        <div className={`flex aligncenter justicenter mTop10 formestats ${styles.graph}`}>
-                                            {(loadA && lastA.general != null) && lastA.general[0].matchs.map((match, index) => {
-                                                return <span key={index} className={`${styles.rounder} ${match.result}`}></span>
-                                            })}
-                                        </div>
-                                     </div>
+                                    </div>
+                                    <div className={styles.resume}></div>
                                      <p><strong>Prediction number of goals conceded {data.homeTeam.team_name}</strong><br />{data.homeTeam.team_name} redeemed {(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_encaisses} in these last 5 games, i.e. an average of {(loadA && lastA.general != null) && lastA.general[0].stats[0].buts_out} goals per game. Its defense potential is {loadA && (100-(lastA.general[0].stats[0].buts_encaisses*10)/1.4).toFixed(0)}%.</p>
                                     </div>
                                     <div className={`w50 wm100 ${styles.gamebox} text-center`}>
@@ -560,23 +545,18 @@ export default function PronosticMatch({datas}){
                                         </div>                                
                                         {data.awayTeam.team_name}
                                         </h3>
-                                        <div className="mTop10">
-                                            <div>
-                                                <span className={styles.forme}>
-                                                {(loadB && lastB.general != null) && (
-                                                    <>
-                                                        {(100-(lastB.general[0].stats[0].buts_encaisses*10)/1.4).toFixed(0)}
-                                                    </>
-                                                )}    
-                                                %</span>
+                                        <div className="flex justicenter aligncenter gap20">
+                                            <div className={styles.pot}>
+                                                <span className={styles.forme}>{(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_out}</span>
+                                                <span className={styles.formeLabel}>goals per game</span>
+                                            </div>
+                                            <span className={styles.slash}>⚡</span>
+                                            <div className={styles.pot}>
+                                                <span className={styles.forme}>{loadB && ((100-(lastB.general[0].stats[0].buts_encaisses*10)/1.4).toFixed(0))}%</span>
                                                 <span className={styles.formeLabel}>Defensive potential</span>
                                             </div>
-                                            <div className={`flex aligncenter justicenter mTop10 formestats ${styles.graph}`}>
-                                                {(loadB && lastB.general != null) && lastB.general[0].matchs.map((match, index) => {
-                                                    return <span key={index} className={`${styles.rounder} ${match.result}`}></span>
-                                                })}
-                                            </div>
                                         </div>
+                                        <div className={styles.resume}></div>
                                         <p><strong>Prediction number of goals conceded {data.awayTeam.team_name}</strong><br />{data.awayTeam.team_name} redeemed {(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_encaisses} in these last 5 games, i.e. an average of {(loadB && lastB.general != null) && lastB.general[0].stats[0].buts_out} goals per game. Its defense potential is {(loadB && lastB.general != null) && (100-(lastB.general[0].stats[0].buts_encaisses*10)/1.4).toFixed(0)}%.</p>
                                     </div>
                                 </div>
