@@ -37,7 +37,7 @@ export function HeaderCTA(){
 
     return (
         <div className={test ? "connected" : ""}>
-            {load ? (
+            {/* {load ? (
                 <div>
                     <Link href="/vip/" passHref legacyBehavior>
                         <a className="relative ctaDesktopHeader">
@@ -57,7 +57,7 @@ export function HeaderCTA(){
                         <Skeleton variant="rectangular" animation="wave" width={1280} height={112} radius="18" />
                     </a>
                 </Link>
-            )}
+            )} */}
         </div>
     )
 }

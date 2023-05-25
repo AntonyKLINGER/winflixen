@@ -229,13 +229,13 @@ export default function PronosticsFoot({datas}){
                             <h2>Who should you bet? The Football of the Day Prediction List</h2>
                             <p>Out of the 7 matches of the day, the Winflix team can offer you all their football predictions with a success rate of over 84%! Want to know who to bet on today? On which team and on which day does Pono play? Bet on reliability with your bet of the day and join the Winflix community!</p>
                             <div className={`flex aligncenter mBot20 ${styles.menuPro}`}>
-                                <Link href={`/football/predicitons/prediction-${load && dates.avanthier2.replaceAll('/', '-')}/`} className={styles.dateSelector}>{load && dates.avanthier2.slice(0, -5)}</Link>
-                                <Link href={`/football/predicitons/prediction-${load && dates.avanthier.replaceAll('/', '-')}/`} className={styles.dateSelector}>{load && dates.avanthier.slice(0, -5)}</Link>
-                                <Link href={`/football/predicitons/prediction-${load && dates.hier.replaceAll('/', '-')}/`} className={styles.dateSelector}>{load && dates.hier.slice(0, -5)}</Link>
+                                <Link href={`/football/predictions/prediction-${load && dates.avanthier2.replaceAll('/', '-')}/`} className={styles.dateSelector}>{load && dates.avanthier2.slice(0, -5)}</Link>
+                                <Link href={`/football/predictions/prediction-${load && dates.avanthier.replaceAll('/', '-')}/`} className={styles.dateSelector}>{load && dates.avanthier.slice(0, -5)}</Link>
+                                <Link href={`/football/predictions/prediction-${load && dates.hier.replaceAll('/', '-')}/`} className={styles.dateSelector}>{load && dates.hier.slice(0, -5)}</Link>
                                 <Link href="#" className={styles.dateSelector}>Today</Link>
-                                <Link href={`/football/predicitons/prediction-${load && dates.demain.replaceAll('/', '-')}/`} className={styles.dateSelector}>{load && dates.demain.slice(0, -5)}</Link>
-                                <Link href={`/football/predicitons/prediction-${load && dates.apresdemain.replaceAll('/', '-')}/`} className={styles.dateSelector}>{load && dates.apresdemain.slice(0, -5)}</Link>
-                                <Link href={`/football/predicitons/prediction-${load && dates.apresdemain2.replaceAll('/', '-')}/`} className={styles.dateSelector}>{load && dates.apresdemain2.slice(0, -5)}</Link>
+                                <Link href={`/football/predictions/prediction-${load && dates.demain.replaceAll('/', '-')}/`} className={styles.dateSelector}>{load && dates.demain.slice(0, -5)}</Link>
+                                <Link href={`/football/predictions/prediction-${load && dates.apresdemain.replaceAll('/', '-')}/`} className={styles.dateSelector}>{load && dates.apresdemain.slice(0, -5)}</Link>
+                                <Link href={`/football/predictions/prediction-${load && dates.apresdemain2.replaceAll('/', '-')}/`} className={styles.dateSelector}>{load && dates.apresdemain2.slice(0, -5)}</Link>
                             </div>
                             {datas.map((leagues, index) => {
                                 return (

@@ -110,9 +110,11 @@ function MyApp({ Component, pageProps }) {
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <link rel="manifest" href="https://winflix.net/manifest.json" />
       <link rel="apple-touch-icon" href="https://winflix.net/apple-touch-icon.png" />
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
       <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossOrigin="anonymous" referrerPolicy="no-referrer" />  
+      <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossOrigin="anonymous" onload="this.onload=null;this.rel='stylesheet'" />
+      <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+      </noscript> 
       <meta name="ga-site-verification" content="ljCh12CaXuf17p9ziF0e8rA8" />
       <meta name="p:domain_verify" content="19ccf280dd08d911476e49a1ca198feb"/>
       <link rel="canonical" href={`https://winflix.net/en${router.asPath}`} />
@@ -122,9 +124,9 @@ function MyApp({ Component, pageProps }) {
       <Header />
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=AW-665703888`}
-        strategy="afterInteractive"
+        strategy="async"
       />
-      <Script id="google-analytics-script" strategy="afterInteractive">
+      <Script id="google-analytics-script" strategy="async">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

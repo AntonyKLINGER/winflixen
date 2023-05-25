@@ -14,7 +14,7 @@ import { WINFLIX_URL } from '../config'
 
 export default function PronosticsFoot({datas}){
 
-    const {user, setUser} = useContext(UserContext)
+    const {user, setUser, sub} = useContext(UserContext)
     const {credits, setCredits} = useContext(UserContext)
     const [dateJour, setDateJour] = React.useState(datas.date)
     const [formatDate, setFormatDate] = React.useState("jour")
@@ -203,7 +203,7 @@ export default function PronosticsFoot({datas}){
                                                 <div style={{ display: 'none' }}>
                                                     <span itemProp="sport">Football</span>
                                                     <span itemProp="location">{leagues.title.split("-")[0]}</span>
-                                                    <span itemProp="startDate">{dateJour.replaceAll("/", "-").split("-")[2]+'-'+dateJour.replaceAll("/", "-").split("-")[1]+'-'+dateJour.replaceAll("/", "-").split("-")[0]}</span>
+                                                    <span itemProp="startDate">{dateJour && dateJour.replaceAll("/", "-").split("-")[2]+'-'+dateJour.replaceAll("/", "-").split("-")[1]+'-'+dateJour.replaceAll("/", "-").split("-")[0]}</span>
                                                     <div itemProp="competitor" itemScope itemType="https://schema.org/SportsTeam">
                                                         <meta itemProp="name" content={match.title.split('Prediction ')[1].split("-")[0]} />
                                                     </div>
@@ -230,28 +230,30 @@ export default function PronosticsFoot({datas}){
                                                                 <h3 itemProp="name">{match.title} <span>{match.metas}</span></h3>
                                                             </Link>
                                                             <div className="w60 wm100">
+                                                                {sub && (
                                                                 <div className="flex aligncenter">
-                                                                    <Link href={match.url.replaceAll("prediction-", "statistics-")} passHref className={`w20 text-center ${styles.sepBet}`}>
-                                                                        <span className={styles.titleBet}>Stats</span>
-                                                                        <span className={`material-icons ${styles.iconBet}`} style={{ color: sub.status == "active" ? 'green' : 'red' }} data-icon="query_stats"></span>
-                                                                    </Link>
-                                                                    <Link href={match.url.replaceAll("prediction-", "exact-result-")} passHref className={`w20 text-center ${styles.sepBet}`}>
-                                                                        <span className={styles.titleBet}>Score</span>
-                                                                        <span className={`material-icons ${styles.iconBet}`} style={{ color: sub.status == "active" ? 'green' : 'red' }}  data-icon="scoreboard"></span>
-                                                                    </Link>
-                                                                    <Link href={match.url.replaceAll("prediction-", "")} passHref className={`w20 text-center ${styles.sepBet}`}>
-                                                                        <span className={styles.titleBet}>Proba</span>
-                                                                        <span className={`material-icons ${styles.iconBet}`} style={{ color: sub.status == "active" ? 'green' : 'red' }}  data-icon="equalizer"></span>
-                                                                    </Link>
-                                                                    <Link href={match.url.replaceAll("prediction-", "highlights-goals-")} passHref className={`w20 text-center ${styles.sepBet}`}>
-                                                                        <span className={styles.titleBet}>Goals</span>
-                                                                        <span className={`material-icons ${styles.iconBet}`} style={{ color: sub.status == "active" ? 'green' : 'red' }}  data-icon="sports_soccer"></span>
-                                                                    </Link>
-                                                                    <Link href={match.url} passHref className={`w20 text-center ${styles.sepBet}`}>
-                                                                        <span className={styles.titleBet}>Predic.</span>
-                                                                        <span className={`material-icons ${styles.iconBet}`} style={{ color: sub.status == "active" ? 'green' : 'red' }}  data-icon="rocket_launch"></span>
-                                                                    </Link>
-                                                                </div>
+                                                                <Link href={match.url.replaceAll("prediction-", "statistics-")} passHref className={`w20 text-center ${styles.sepBet}`}>
+                                                                    <span className={styles.titleBet}>Stats</span>
+                                                                    <span className={`material-icons ${styles.iconBet}`} style={{ color: sub.status == "active" ? 'green' : 'red' }} data-icon="query_stats"></span>
+                                                                </Link>
+                                                                <Link href={match.url.replaceAll("prediction-", "exact-result-")} passHref className={`w20 text-center ${styles.sepBet}`}>
+                                                                    <span className={styles.titleBet}>Score</span>
+                                                                    <span className={`material-icons ${styles.iconBet}`} style={{ color: sub.status == "active" ? 'green' : 'red' }}  data-icon="scoreboard"></span>
+                                                                </Link>
+                                                                <Link href={match.url.replaceAll("prediction-", "")} passHref className={`w20 text-center ${styles.sepBet}`}>
+                                                                    <span className={styles.titleBet}>Proba</span>
+                                                                    <span className={`material-icons ${styles.iconBet}`} style={{ color: sub.status == "active" ? 'green' : 'red' }}  data-icon="equalizer"></span>
+                                                                </Link>
+                                                                <Link href={match.url.replaceAll("prediction-", "highlights-goals-")} passHref className={`w20 text-center ${styles.sepBet}`}>
+                                                                    <span className={styles.titleBet}>Goals</span>
+                                                                    <span className={`material-icons ${styles.iconBet}`} style={{ color: sub.status == "active" ? 'green' : 'red' }}  data-icon="sports_soccer"></span>
+                                                                </Link>
+                                                                <Link href={match.url} passHref className={`w20 text-center ${styles.sepBet}`}>
+                                                                    <span className={styles.titleBet}>Predic.</span>
+                                                                    <span className={`material-icons ${styles.iconBet}`} style={{ color: sub.status == "active" ? 'green' : 'red' }}  data-icon="rocket_launch"></span>
+                                                                </Link>
+                                                            </div>
+                                                                )}
                                                             </div>
                                                         </div>
                                                         {sub.status != "active" && (

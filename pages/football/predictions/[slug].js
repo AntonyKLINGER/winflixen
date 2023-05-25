@@ -102,26 +102,28 @@ export default function PronosticMatch({datas}){
   
     useEffect(() => {
       const checkStatus = async () => {
-        const homeTeamUrl = `https://winflix.net/en/soccer-predictions/prediction-${data.homeTeam.team_url}`;
-        const awayTeamUrl = `https://winflix.net/en/soccer-predictions/prediction-${data.awayTeam.team_url}`;
-  
-        try {
-          const homeTeamResponse = await axios.get(homeTeamUrl);
-          setHomeTeamStatus(homeTeamResponse.status);
-        } catch (error) {
-          setHomeTeamStatus(error.response.status);
-        }
-  
-        try {
-          const awayTeamResponse = await axios.get(awayTeamUrl);
-          setAwayTeamStatus(awayTeamResponse.status);
-        } catch (error) {
-          setAwayTeamStatus(error.response.status);
+        if(data){
+            const homeTeamUrl = `https://winflix.net/en/soccer-predictions/prediction-${data.homeTeam.team_url}`;
+            const awayTeamUrl = `https://winflix.net/en/soccer-predictions/prediction-${data.awayTeam.team_url}`;
+      
+            try {
+              const homeTeamResponse = await axios.get(homeTeamUrl);
+              setHomeTeamStatus(homeTeamResponse.status);
+            } catch (error) {
+              setHomeTeamStatus(error.response.status);
+            }
+      
+            try {
+              const awayTeamResponse = await axios.get(awayTeamUrl);
+              setAwayTeamStatus(awayTeamResponse.status);
+            } catch (error) {
+              setAwayTeamStatus(error.response.status);
+            }
         }
       };
   
       checkStatus();
-    }, [data.homeTeam.team_url, data.awayTeam.team_url]);
+    }, [datas]);
 
 
     const organisationData = {
@@ -140,7 +142,7 @@ export default function PronosticMatch({datas}){
     const articleData = {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": `Winflix : Football prediction ${data.homeTeam.team_name} ${data.homeTeam.away_name} ${data.homeTeam.team_name} ${data.date} in ${data.league_name_fr}`,
+        "headline": `Winflix : Football prediction ${data ? data.homeTeam.team_name : ""} ${data ? data.homeTeam.away_name : ""} ${data ? data.homeTeam.team_name : ""} ${data ? data.date : ""} in ${data ? data.league_name_fr : ""}`,
         "image": "https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75",
         "author": "Winflix",
         "publisher": {
@@ -151,8 +153,8 @@ export default function PronosticMatch({datas}){
             "url": "https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75"
             }
         },
-        "datePublished": `${data.event_date}`,
-        "description": `All football prediction about ${data.homeTeam.team_name} ${data.awayTeam.team_name} from ${data.date} in ${data.league_name_fr}.`
+        "datePublished": `${data ? data.event_date : "2023-10-10 00:00:00"}`,
+        "description": `All football prediction about ${data ? data.homeTeam.team_name : "this day"} ${data ? data.awayTeam.team_name : ""} from ${data ? data.date : ""} in ${data ? data.league_name_fr : ""}.`
     }
 
     const speakableData = {
@@ -167,12 +169,12 @@ export default function PronosticMatch({datas}){
     const eventData = {
         "@context": "https://schema.org",
         "@type": "Event",
-        "name": `Football pediction ${data.homeTeam.team_name} vs ${data.awayTeam.team_name} from ${data.date} in ${data.league_name_fr}`,
-        "startDate": `${data.event_date}`,
+        "name": `Football pediction ${data && data.homeTeam.team_name} vs ${data && data.awayTeam.team_name} from ${data ? data.date : "this day "} in ${data ? data.league_name_fr : "all championship"}`,
+        "startDate": `${data ? data.event_date : "2023-01-01 00:00:00"}`,
         "location": {
           "@type": "Place",
-          "name": `${data.venue}`,
-          "address": `${data.country}`
+          "name": `${data ? data.venue : "Everywhere"}`,
+          "address": `${data ? data.country : "World"}`
         },
         "organizer": {
           "@type": "Organization",
@@ -180,12 +182,12 @@ export default function PronosticMatch({datas}){
         }
     }
 
-    if(path.includes("pronostico-del-") == false){
+    if(path.includes("prediction-") == false || data){
     
     return (
         <div className="appInfos">
 
-            {datas.slug.includes("prognose-tipp") ? (
+            {datas.slug.includes("prediction-") ? (
                 <Head>
                     <title>Prediction {data.homeTeam.team_name} - {data.awayTeam.team_name} from {data.date} 😎 Highly probable !</title>
                     <meta name="description" content={`✅ Looking for the best betting tips ${data.homeTeam.team_name} vs ${data.awayTeam.team_name} ${data.league_name_fr} for the game of ${data.date} → Check the reliable prediction here our experts!`} />
@@ -250,7 +252,7 @@ export default function PronosticMatch({datas}){
                 <div className="mBot20">
                     <HeaderCTA />
                 </div>    
-                {datas.slug.includes("prognose-tipp") ? (
+                {datas.slug.includes("prediction-") ? (
                 <>
                     <ol itemScope itemType="http://schema.org/BreadcrumbList" style={{display: "none"}}>
                         <li itemProp="itemListElement" itemScope

@@ -10,7 +10,7 @@ export default function BlogPost({datas}){
                 <Image src={`${datas.media}`} alt={`${datas.title}`} layout='fill' quality="20" />
             </div>
             <div className="w70">
-                <Link href={datas.url} passHref legacyBehavior>
+                <Link href={datas.url.replaceAll('.wpen', '')} passHref legacyBehavior>
                     <a className={styles.blogTitle} dangerouslySetInnerHTML={{__html: datas.title}}></a>
                 </Link>
                 <span className={styles.blogDate}>{datas.date}</span>

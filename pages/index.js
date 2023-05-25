@@ -292,9 +292,9 @@ export default function NewHome(){
                     <div className={`w25 mLeft30 wm100 mLnone ${styles.ajpadd} mmTop20 mmTop0`}>
                         <Link href="/football-tips-prediction/" style={{ textDecoration: 'none', color: '#000' }}>
                             <div className={styles.wintipsBox}>
-                                <div className={styles.wintipsImg}>
+                                {/* <div className={styles.wintipsImg}>
                                     <Image src={`https://wpen.winflix.net/wp-content/uploads/2023/03/liverpool-wintips-scaled.jpg`} alt="predictions of the day Wintips" layout="fill" />
-                                </div>
+                                </div> */}
                                 <div className={styles.wintipsMetas}>
                                     <div className="flex aligncenter space-between">
                                         <span className={styles.wintipsDate}><span className="material-icons" data-icon="calendar_today"></span>{load ? wintips.date : <Skeleton variant="rectangle" animation="wave" width={70} height={15} />}</span>
