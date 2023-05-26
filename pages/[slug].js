@@ -13,6 +13,11 @@ export default function Article({datas}){
             <Head>
                 <title>{datas[0].title.replaceAll("&quot;", "").replaceAll("&#39;", "'")}</title>
                 <meta name="description" content="Need to find the best football predictions ⚽ ? Choose Winflix, a reliable prediction service developed by sports betting experts. 93% fiablite and a VIP recommended!" />
+                <meta property="og:image" content="https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75" />
+                <meta property="og:title" content={datas[0].title.replaceAll("&quot;", "").replaceAll("&#39;", "'")} />
+                <meta property="og:description" content="Need to find the best football predictions ⚽ ? Choose Winflix, a reliable prediction service developed by sports betting experts. 93% fiablite and a VIP recommended!" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="en_EN" />
             </Head>
             <div className="app-boxed">
                 <div className="mBot20">

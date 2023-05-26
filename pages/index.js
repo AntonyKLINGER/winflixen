@@ -261,6 +261,11 @@ export default function NewHome(){
                 <link rel="alternate" hrefLang="de" href="https://winflix.net/de/" />
                 <link rel="alternate" hrefLang="it" href="https://winflix.net/it/" />
                 <link rel="alternate" hrefLang="en" href="https://winflix.net/en/" />
+                <meta property="og:image" content="https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75" />
+                <meta property="og:title" content="🔥 Need Football Predictions ? ⇉ Winflix the page of betting tips + winnings and reliable from real football experts" />
+                <meta property="og:description" content="≫ The best football prediction for any football match on our expert football predictions page! √ 36 Soccer Championships √ Reliable Prediction Software by Rate √ Real Tools to Win Predictions √" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="en_EN" />
             </Head>
             <div className="app-boxed">
                 <div className="mBot20">

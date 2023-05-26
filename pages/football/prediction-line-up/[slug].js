@@ -112,6 +112,11 @@ export default function FormeStats({datas}){
                 <link rel="alternate" hrefLang="de" href={`https://winflix.net/de/fussball/aufstellung/aufstellung-${datas.trads.teamA}-${datas.trads.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                 <link rel="alternate" hrefLang="it" href={`https://winflix.net/it/calcio/probabili-formazioni/formazione-${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
                 <link rel="alternate" hrefLang="en" href={`https://winflix.net/en${router.asPath}`} />
+                <meta property="og:image" content="https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75" />
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={`Lineups: Which players will start and who will be substituted for the game ${data.homeTeam.team_name} against ${data.awayTeam.team_name} from ${data.date}`} />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="en_EN" />
                 <script
                 type='application/ld+json'
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationData) }}

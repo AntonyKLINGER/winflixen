@@ -24,7 +24,12 @@ export default function TopTools(){
                 <link rel="alternate" hrefLang="fr" href="https://winflix.net/top-5-outils-pronostics-foot/" />
                 <link rel="alternate" hrefLang="de" href="https://winflix.net/de/top-5-vorhersagen-tools/" />
                 <link rel="alternate" hrefLang="it" href="https://winflix.net/it/top-5-strumenti-pronostico/" />   
-                <link rel="alternate" hrefLang="en" href="https://winflix.net/en/top-5-predictions-tools/" />         
+                <link rel="alternate" hrefLang="en" href="https://winflix.net/en/top-5-predictions-tools/" />  
+                <meta property="og:image" content="https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75" />
+                <meta property="og:title" content="TOP 5 support tools for football betting" />
+                <meta property="og:description" content="Winflix has developed the best tools to help bettors optimize their sports betting. Here you will find the top 5 help tools!" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="en_EN" />          
             </Head>
             <div className="app-boxed">
                 <div className="mBot20">

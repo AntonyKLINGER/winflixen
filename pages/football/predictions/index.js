@@ -152,6 +152,11 @@ export default function PronosticsFoot({datas}){
                 <link rel="alternate" hrefLang="de" href="https://winflix.net/de/fussball/vorhersagen/" />
                 <link rel="alternate" hrefLang="it" href="https://winflix.net/it/calcio/pronostico/" />
                 <link rel="alternate" hrefLang="en" href="https://winflix.net/en/football/predictions/" />
+                <meta property="og:image" content="https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75" />
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={`Are you looking for the best football predictions of the day? Today you will find the 5 best football sports bets here!`} />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="en_EN" />
             </Head>
             <ol itemScope itemType="http://schema.org/BreadcrumbList" style={{display: "none"}}>
               <li itemProp="itemListElement" itemScope

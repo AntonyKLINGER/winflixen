@@ -323,6 +323,11 @@ export default function WinCotes(){
                 <link rel="alternate" hrefLang="de" href="https://winflix.net/de/winodds/" />
                 <link rel="alternate" hrefLang="it" href="https://winflix.net/it/winodds/" />
                 <link rel="alternate" hrefLang="en" href="https://winflix.net/en/winodds/" />
+                <meta property="og:image" content="https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75" />
+                <meta property="og:title" content="WinOdds | Find the best match odds on your terms !" />
+                <meta property="og:description" content="Find the best odds according to the conditions you decide. Whether for a single bet or a combination WinOdds is the best tool for you!" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="en_EN" /> 
             </Head>
             <div className="app-boxed">
                 <div className="mBot20">

@@ -44,6 +44,11 @@ export default function WinBot(){
                 <link rel="alternate" hrefLang="it" href="https://winflix.net/it/previsioni-calcio-diretta/" />
                 <link rel="alternate" hrefLang="en-en" href="https://winflix.net/en/prediction-live-football/" />
                 <link rel="alternate" hrefLang="en" href="https://winflix.net/en/prediction-live-football/" />
+                <meta property="og:image" content="https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75" />
+                <meta property="og:title" content="Winbot Live Predictions | Get all the predictable football live thanks to Winbot Telegram!s" />
+                <meta property="og:description" content="Check out Winflix's new telegram bot to get real-time notifications for football predictions" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="en_EN" />
             </Head>
             <div className="app-boxed">
                 <div className="mBot20">

@@ -199,6 +199,11 @@ export default function PronosticMatch({datas}){
                     <link rel="alternate" hrefLang="de" href={`https://winflix.net/de/fussball/vorhersagen/prognose-tipp-${datas.trads.de.teamA}-${datas.trads.de.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.de.league}/`} />
                     <link rel="alternate" hrefLang="it" href={`https://winflix.net/it/calcio/pronostico/pronostici-${datas.trads.it.teamA}-${datas.trads.it.teamB}-${data.date.replaceAll("/", "-")}-${datas.trads.it.league}/`} />
                     <link rel="alternate" hrefLang="en" href={`https://winflix.net/en${router.asPath}`} />
+                    <meta property="og:image" content="https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75" />
+                    <meta property="og:title" content={`Prediction ${data.homeTeam.team_name} - ${data.awayTeam.team_name} from ${data.date} 😎 Highly probable !`} />
+                    <meta property="og:description" content={`✅ Looking for the best betting tips ${data.homeTeam.team_name} vs ${data.awayTeam.team_name} ${data.league_name_fr} for the game of ${data.date} → Check the reliable prediction here our experts!`} />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:locale" content="en_EN" />
                     <script
                     type='application/ld+json'
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationData) }}
