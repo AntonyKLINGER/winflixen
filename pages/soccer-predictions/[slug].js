@@ -94,11 +94,11 @@ export default function FormeStats({datas}){
                 <title>{title}</title>
                 <meta name="description" content={`🥇 Best predictions ${data.name} Bet only! Our reliable tips and predictions for your sports betting`} />
                 <link rel="alternate" hrefLang="fr-fr" href={`https://winflix.net/prono-foot/pronostic-${data.trads.fr}/`} />
-                <link rel="alternate" hrefLang="de-de" href={`https://winflix.net/de/sportwetten-tipps/prognose-${data.trads.de}/`} />
+                <link rel="alternate" hrefLang="de-de" href={`https://winflix.net/de/sportwetten-tipps/prognose-${data.trads.de}/-tippspiel`} />
                 <link rel="alternate" hrefLang="it-it" href={`https://winflix.net/it/scommessa-calcio/pronostici-${data.trads.it}/`} />
                 <link rel="alternate" hrefLang="en-en" href={`https://winflix.net/en${router.asPath}`} />
                 <link rel="alternate" hrefLang="fr" href={`https://winflix.net/prono-foot/pronostic-${data.trads.fr}/`} />
-                <link rel="alternate" hrefLang="de" href={`https://winflix.net/de/sportwetten-tipps/prognose-${data.trads.de}/`} />
+                <link rel="alternate" hrefLang="de" href={`https://winflix.net/de/sportwetten-tipps/prognose-${data.trads.de}-tippspiel/`} />
                 <link rel="alternate" hrefLang="it" href={`https://winflix.net/it/scommessa-calcio/pronostici-${data.trads.it}/`} /> 
                 <link rel="alternate" hrefLang="en" href={`https://winflix.net/en${router.asPath}`} />          
                 <meta property="og:image" content="https://winflix.net/_next/image/?url=https%3A%2F%2Fwp.winflix.net%2Fwp-content%2Fuploads%2F2021%2F04%2FWinflix-pronostic-foot.png&w=3840&q=75" />

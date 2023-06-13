@@ -19,7 +19,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Resultats(){
 
-    const [filterMonth, setFilterMonth] = React.useState("05")
+    const [filterMonth, setFilterMonth] = React.useState("06")
     const [filterYear, setFilterYear] = React.useState(new Date().getFullYear())
     const [results, setResults] = React.useState(null)
     const [load, setLoad] = React.useState(false)
